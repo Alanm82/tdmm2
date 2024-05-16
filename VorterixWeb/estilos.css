@@ -1,0 +1,572 @@
+@font-face {
+    font-family: BwModelica;
+    src: url(./Fonts/BwModelica/BwModelica-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: BwModelica;
+    src: url(./Fonts/BwModelica/BwModelicaBold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: BwModelica;
+    src: url(./Fonts/BwModelica/BwModelicaExtraBold.ttf);
+    font-weight: 800;
+}
+@font-face {
+    font-family: Alesand;
+    src: url(./Fonts/Alesand/Alesand\ Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Kanit;
+    src: url(./Fonts/Kanit/Kanit-Light.ttf);
+    font-weight: lighter;
+}
+@font-face {
+    font-family: Kanit;
+    src: url(./Fonts/Kanit/Kanit-Regular.ttf);
+    font-weight: normal;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin: 0px 48px;
+    background-color: #171717;
+}
+
+header{
+display: flex;
+flex-direction: column;
+color: #FAFFED;
+}
+nav{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #0A0A09;
+  color: #fff;
+  border-radius: 15px;
+}
+
+h1{
+    margin: 0px;
+}
+
+h2{
+    font-size: 32px;
+    font-family: BwModelica;
+    font-weight: bold;
+    margin: 8px;
+}
+
+h3{
+    font-size: 24px;
+    font-family: BwModelica;
+    font-weight: normal;
+}
+h4{
+    font-size: 24px;
+    font-family: Kanit;
+    font-weight: normal;
+    margin: 0px;
+}
+
+.MenuIcon{
+    display: none;
+}
+.Menu ul{
+display: flex;
+flex: row;
+gap: 20px; 
+list-style-type: none;
+}
+.Menu a{
+text-decoration: none;
+color: #FAFFED;
+font-family:Alesand;
+font-size: 24px;
+padding: 8px;
+}
+
+.texts p{
+font-family: BwModelica;
+font-weight: normal;
+font-size: 24px;
+margin: 8px;
+}
+
+img{
+    border-radius: 15px;
+}
+
+.Menu{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: end;
+}
+
+.Banner{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    justify-content: start;
+    grid-template-rows: auto auto;
+    column-gap: 5%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.form{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between; 
+   align-content: center;
+   text-align: center;
+   gap: 16px;
+   width: 100%;
+}
+
+.Titulo{
+    font-family: BwModelica;
+    font-weight: 800;
+    margin-top: 0cm;
+    justify-content: start;
+    text-align: center;
+    height: fit-content;
+}
+
+.Titulo h1{
+    font-size: 56px;
+    color: #BBFE03;
+}
+.Titulo h2{
+    font-size: 32px;
+    color: #FAFFED;
+}
+.Carousel{
+    grid-row: span 2;
+    display: flex;
+    width:45%;
+    margin-top: 16px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: start;
+}
+
+.Carousel img{
+    width: fit-content;
+}
+
+.Campos{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+font-family: Alesand;
+font-size: 20px;
+}
+.Campos h4{
+   text-align: center;
+   align-content: center;
+ }
+
+ .Dropdown{
+    width: 100%;
+ }
+
+.Dropdown button{
+    background-color: transparent;
+    font-size: 24px;
+    width: 100%;
+    color: #FAFFED;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+    border-width: 2px;
+    border-style:solid;
+    border-color: #FAFFED;
+    opacity: 0.5;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.Dropdown .content {
+    display: flex;
+    flex-direction: column;
+    column-gap: 8px;
+    position: absolute;
+    width: 44%;
+    background-color: #a5a5a5;
+    visibility: hidden;
+    
+}
+
+.Dropdown:hover .content {
+    visibility: visible;
+    opacity: 1;
+}
+.Dropdown img {
+width: min(40px, 50px); /* Establece el ancho mínimo en 20px y el máximo en 40px */
+height: min(20px, 25px); /* Establece la altura mínima en 10px y la máxima en 20px */
+}
+
+.CampoRellenable{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 48%;
+    gap: 8px;
+}
+input{
+    padding: 8px 0px;
+    height: fit-content;
+    border-style:solid;
+    color: #FAFFED;
+    background-color: transparent;
+    border-width:2px;
+    border-color:#F7F7F7;
+    opacity: .5;
+    border-radius: 10px;
+    font-family: Alesand;
+    font-size: 24px;
+    text-align: center;
+}
+
+#Campo2{
+    display: flex;
+    flex-direction: row;
+}
+
+.Seccion{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    color: #FAFFED;
+}
+
+.Slider{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 16px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.bullet{
+ margin:0px 20px; 
+}
+
+.rect{
+    background-color: beige;
+    height: 240px;
+}
+.rect2{
+    background-color: beige;
+    height: 240px;
+    width: 75%;
+}
+
+.PSeccion{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-template-rows: repeat(2,1fr);
+grid-column-gap:20px;
+grid-row-gap: 32px;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: start;
+    gap: 20px;
+}
+
+.Info{
+    width: 25%;
+}
+
+.Info h2{
+    margin: 0;
+}
+
+.Info h5{
+    font-family: Kanit;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 8px 0px;
+}
+
+button{
+    padding: 8px 24px;
+    font-size: 32px;
+    border-radius: 15px;
+    color: #171717;
+    background-color: #BBFE03;
+    font-family: Alesand;
+    font-weight: normal;
+}
+
+.Secondary{
+    align-self: center;
+    width: 66.66%;
+    color: #FAFFED;
+    background-color: #4E26B4;   
+}
+
+.CTA{
+    background-color: rgba(78, 38, 180, 0.35);
+    color: #FAFFED;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    padding-top: 16px;
+    padding-bottom: 24px;
+}
+
+#CtaButton{
+    width: 66.66%;
+}
+
+.Redes{
+    color: #FAFFED;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.Redes h1{
+    margin-top: 0px;
+    align-self: center;
+}
+.CarouselRedes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.RedSocial{
+    height: 100px;
+    width: 100px;
+    background-color: chartreuse;
+}
+
+footer{
+    display: flex;
+    flex-direction:column;
+    gap: 16px;
+    color: #FAFFED;
+    margin-bottom: 48px;
+}
+
+footer h1,h2 {
+align-self: center;
+}
+
+footer h4{
+    font-size: Kanit;
+    font-size: 20px;
+    font-weight: lighter;
+}
+.FootPart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.IconText{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.ImgPrueba{
+    background-color: crimson;
+    height: 50px;
+    width: 50px;
+}
+.contenido{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        margin: 0px 16px;
+        gap: 48px;
+    }
+
+    h1{
+        font-size: 32px;
+    }
+    .Titulo h1{
+        font-size: 40px;
+        font-weight: 800;
+    }
+    .Titulo h2{
+        font-size: 24px;
+        font-weight: 800;
+    }
+    .texts p{
+        font-size: 20px;
+    }
+
+    h3{
+        font-size: 16px;  
+    }
+    .texts h1 {
+        font-size: 32px;
+    }
+    .Menu{
+        display: none;
+    }
+    .MenuIcon{
+        display:block;
+    }
+
+    .MenuIcon img{
+        border-radius: 0px;
+    }
+
+    .Banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-content: center;
+        gap: 16px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    .Titulo{
+        order: 1;
+    }
+    .Carousel{
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .Carousel img{
+        width: 396px;
+    }
+    
+    .form{
+        order: 3;
+        gap: 16px;
+    }
+
+    .Campos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+    }
+        
+    .CampoRellenable{
+    width: 100%;
+    height: fit-content;
+    gap: 8px;
+    }
+
+    button{
+        width: 100%;
+        font-style: Alesand;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 8px;
+    }
+
+    
+    .PSeccion{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card{
+        display: flex;
+        flex-direction: column;
+    }
+    #card3{
+        display: none;
+    }
+    #card4{
+        display: none;
+    }
+
+    .rect2{
+        height: 200px;
+        width: 100%;
+    }
+
+    .Info{
+        width: 100%;
+        text-align: center;
+    }
+
+    .Info h4{     
+        font-family: Alesand;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .Info h5{
+        display: none;
+    }
+
+    .Info p{
+         font-family:Kanit;
+         font-size: 16px;
+         font-weight: lighter;
+
+    }
+
+    .Secondary{
+        width: 100%;
+        font-style: Alesand;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 8px;
+    }
+
+    .CTA{
+        background-color: #4E26B4;
+    }
+
+    .CarouselRedes{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 5%;
+    }
+    RedSocial{
+        align-self: center;
+    }
+
+    footer h2{
+        font-size: 24px;
+    }
+    footer h4{
+        font-family: Kanit;
+        font-weight: lighter;
+        font-size: 16px;
+    }
+
+    .contenido{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+}
