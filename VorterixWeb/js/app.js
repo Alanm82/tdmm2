@@ -274,9 +274,12 @@ document.getElementById('ShowButton').addEventListener('click', () => {
 });
 
 document.getElementById('CtaButton').addEventListener('click', () => {
-    document.getElementById('Header').scrollIntoView({ behavior: 'smooth' });
+    const target = document.getElementById('myForm');
+    const offset = window.innerHeight / 2 - target.clientHeight / 2;
+    window.scrollTo({
+        top: target.offsetTop - offset,
+        behavior: 'smooth'
+    });
 });
-
-
 
 

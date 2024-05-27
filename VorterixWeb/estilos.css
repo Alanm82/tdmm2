@@ -394,6 +394,7 @@ input {
     display: block;
 }
 
+
 .popUp {
     position: fixed;
     display: flex;
@@ -600,7 +601,7 @@ input {
 .card p {
     font-family: Kanit;
     font-size: 16px;
-    font-weight: normal;
+    font-weight: lighter;
 }
 
 .card img {
