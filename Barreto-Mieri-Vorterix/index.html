@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vorterix</title>
+    <link rel="stylesheet" href="./estilos.css">
+    <script defer src="./js/app.js"> </script>
+</head>
+
+<body>
+    <header id="Header">
+        <nav>
+            <div class="Logo">
+                <img src="./Images/LogoVorterix.jpg" alt="LogoVorterix" width="50" height="50">
+            </div>
+            <div class="Menu">
+                <ul>
+                    <li><a href="#Header">Inicio</a></li>
+                    <li><a href="#PSeccion">Programas</a></li>
+                    <li><a href="#Nosotros">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="MenuIcon">
+                <img src="./Images/Iconos/hamburgesa.png" alt="LogoVorterix" width="26" height="22">
+            </div>
+        </nav>
+        <section class="Banner">
+            <div class="Carousel">
+                <div class="sliderImages">
+                    <label class="cardBanner" for="item-1" id="selector-1">
+                        <img src="./Images/BannerPLM.png" alt="BannerParenLamano">
+                    </label>
+                    <label class="cardBanner" for="item-2" id="selector-2">
+                        <img src="./Images/Banner2.png" alt="BannerParenLamano">
+                    </label>
+                    <label class="cardBanner" for="item-3" id="selector-3">
+                        <img src="./Images/Banner3.png" alt="BannerParenLamano">
+                    </label>
+
+                </div>
+                <div class="Indicadores">
+                    <div class="ContRadio">
+                        <input type="radio" name="Indicador" id="item-1" checked>
+                    </div>
+                    <div class="ContRadio">
+                        <input type="radio" name="Indicador" id="item-2">
+                    </div>
+                    <div class="ContRadio">
+                        <input type="radio" name="Indicador" id="item-3">
+                    </div>
+                </div>
+            </div>
+            <div class="Titulo">
+                <h1>CONTENIDO EXCLUSIVO</h1>
+                <h2>DE TU PROGRAMA FAVORITO</h2>
+            </div>
+            <form action="" method="" id="myForm">
+                <div class="texts">
+                    <p>Obtené bloopers, entrevistas exclusivas y episodios perdidos de tu programa favorito</p>
+                </div>
+                <div class="Campos">
+                    <div class="CampoRellenable">
+                        <input type="text" id="Nombre" placeholder="Nombre" required>
+                    </div>
+
+                    <div class="CampoRellenable">
+                        <input type="email" id="Mail" placeholder="Direccion de correo" required>
+                    </div>
+
+                    <div class="Dropdown">
+                        <button type="button" id="dropdownButton" class="dropButton" onclick="toggleDropdown()">
+                            Programas
+                            <img src="./Images/Iconos/ArrowDown.png" alt="">
+                        </button>
+                        <div class="content" id="dropdownContent">
+                            <div class="dropdown-option" onclick="selectOption('Maldicion va a ser un buen dia')">
+                                Maldicion va a ser un buen dia</div>
+                            <div class="dropdown-option" onclick="selectOption('Zona Liberada')">Zona Liberada</div>
+                            <div class="dropdown-option" onclick="selectOption('Cohete al Sol')">Cohete al Sol</div>
+                            <div class="dropdown-option" onclick="selectOption('#Malditos Nerds')">Malditos Nerds</div>
+                            <div class="dropdown-option" onclick="selectOption('Suban Los Vidrios')">Suban Los Vidrios</div>
+                            <div class="dropdown-option" onclick="selectOption('Paren La Mano')">Paren La Mano</div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="selectedOption" name="selectedOption" required>
+                <button class="Primary" type="submit">
+                    Recibir Contenido
+                </button>
+            </form>
+        </section>
+
+        <div class="overlay"></div>
+        <div class="popUp">
+            <h1> GRACIAS </h1>
+            <h4 id="thanksMessage"> </h4>
+            <h2 id="contentMessage">  </h2>
+            <button id="continueButton">
+                Seguir navegando
+            </button>
+        </div>
+    </header>
+
+    <section class="aboutUs" id="Nosotros">
+        <div class="Encabezado">
+            <h2>¿QUIÉNES SOMOS?</h2>
+        </div>
+        <div class="content">
+            <img src="./Images/vtLogo.png" alt="Vorterixlogo">
+            <p>Nacimos en 2012 como un proyecto muy ambicioso y sin precedentes en nuestro país, pioneros como medio de
+                streaming y frecuencia FM. Hoy transmitimos hacia todo el país y más. Estamos donde vos queres</p>
+        </div>
+
+    </section>
+    <section class="Seccion">
+        <div class="Encabezado">
+            <h2>ULTIMOS PROGRAMAS </h2>
+        </div>
+
+        </div>
+        <div id="Carousel-up" class="CarouselSlider">
+            <div class="SliderInner">
+                <div class="Bullet">
+                    <a href="https://www.youtube.com/watch?v=qAJnGKfHhqs" target="_blank">
+                        <img src="https://img.youtube.com/vi/qAJnGKfHhqs/hqdefault.jpg" alt="Video Thumbnail">
+                    </a>
+                    <p>SANTUTU ESTÁ DESPEDIDO | #SubanLosVidrios | COMPLETO 24/05</p>
+                </div>
+                <div class="Bullet">
+                    <a href="https://www.youtube.com/watch?v=uTkSsFGcIps" target="_blank">
+                        <img src="https://img.youtube.com/vi/uTkSsFGcIps/hqdefault.jpg" alt="Video Thumbnail">
+                    </a>
+                    <p>VIERNES DE PICO PARK Y MESAZA ESPECIAL | #MalditosNerds | COMPLETO 23/05</p>
+                </div>
+                <div class="Bullet">
+                    <a href="https://www.youtube.com/watch?v=Q6W9tZlItGs" target="_blank">
+                        <img src="https://img.youtube.com/vi/Q6W9tZlItGs/hqdefault.jpg" alt="Video Thumbnail">
+                    </a>
+                    <p>ZAPADA CUMBIERA CON UN POCO DE RUIDO | #COHETEALSOL | 24/05 </p>
+                </div>
+                <div class="Bullet">
+                    <a href="https://www.youtube.com/watch?v=aVEaCitUHhA" target="_blank">
+                        <img src="https://img.youtube.com/vi/aVEaCitUHhA/hqdefault.jpg" alt="Video Thumbnail">
+                    </a>
+                    <p>¡CHITA CON MARITO BARACUS! | #ZonaLiberada | COMPLETO 24/05</p>
+                </div>
+                <div class="Bullet">
+                    <a href="https://www.youtube.com/watch?v=FJoiteuK-uc" target="_blank">
+                        <img src="https://img.youtube.com/vi/FJoiteuK-uc/hqdefault.jpg" alt="Video Thumbnail">
+                    </a>
+                    <p>MÚSICA PARA VELORIO | #Maldicion | COMPLETO 24/05</p>
+                </div>
+                <div class="Bullet">
+                    <a href="https://www.youtube.com/watch?v=vZTZVy6089U" target="_blank">
+                        <img src="https://img.youtube.com/vi/vZTZVy6089U/hqdefault.jpg" alt="Video Thumbnail">
+                    </a>
+                    <p>MARIO, SEBA Y DANI SE ANIMARON A LOS EJERCICIOS DE YOGA</p>
+                </div>
+            </div>
+            <div class="controls-wrapper">
+                <div class="Carousel-controls">
+                    <button id="Control-next" class="Control">
+                        <img src="./Images/Iconos/ArrowFoward.png" alt="">
+                    </button>
+
+                    <button id="Control-prev" class="Control">
+                        <img src="./Images/Iconos/arrowBack.png" alt="">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="Seccion">
+        <div class="Encabezado">
+            <h2>PROGRAMAS </h2>
+        </div>
+
+        <div class="PSeccion" id="PSeccion">
+            <div class="card" id="card1">
+                <img src="./Images/Programas/Maldicion.jpg" alt="MaldicionBanner">
+                <div class="overlay">
+                    <h4>Maldición, va a ser un día hermoso </h4>
+                    <h5>Lu a Vi de 8hs a 11hs</h5>
+                    <p>Mario Pergolini y Nacho Corral reversionan tu mañana todos los días para que
+                        arranques con otro humor...</p>
+                </div>
+            </div>
+            <div class="card" id="card2">
+                <img src="./Images/Programas/Zona.jpg" alt="ZonaBanner">
+                <div class="overlay">
+                    <h4>Zona Liberada </h4>
+                    <h5>Lu a Vi de 11hs a 13hs</h5>
+                    <p>Marito Baracus, Guillermina Casero, Fausto Rigoni con el formato Magazine de
+                        toda la vida pero con los códigos propios de internet</p>
+                </div>
+            </div>
+            <div class="card" id="card3">
+                <img src="./Images/Programas/Cohete.jpg" alt="CoheteBanner">
+                <div class="overlay">
+                    <h4>Cohete al sol </h4>
+                    <h5>Lu a Vi de 13hs a 15hs</h5>
+                    <p>
+                        Matias Pergolini y Lucho Magliocca en el momento recreativo de las tardes de Vorterix,
+                        plagado de debates informales, distendidos y absurdos siempre enfocados desde el humor</p>
+                </div>
+            </div>
+            <div class="card" id="card4">
+                <img src="./Images/Programas/Malditos.jpg" alt="MalditosBanner">
+                <div class="overlay">
+                    <h4>Malditos Nerds </h4>
+                    <h5>Lu a Vi de 15hs a 17hs</h5>
+                    <p>Romi Pereyra, Lu Agosta y Nico Rábago el espacio ideal para conocer las noticias más
+                        importantes de la cultura pop: cine, series, tecnología, anime, gaming y mucho más.</p>
+                </div>
+            </div>
+            <div class="card" id="card5">
+                <img src="./Images/Programas/Suban.jpg" alt="SubanBanner">
+                <div class="overlay">
+                    <h4>Suban los vidrios </h4>
+                    <h5>Lu a Vi de 17hs a 19hs</h5>
+                    <p>Unicornio, Santutu y Mortedor nos traen su programa: menos duro que el cemento y
+                        más transparente que el acrílico. humor, actualidad, juegos, sketchs y diversión.</p>
+                </div>
+            </div>
+            <div class="card" id="card6">
+                <img src="./Images/Programas/parenLaMano.jpg" alt="ParenBanner">
+                <div class="overlay">
+                    <h4>Paren la mano </h4>
+                    <h5>Lu a Vi de 19hs a 21hs</h5>
+                    <p>El exitoso streamer y humorista llega a Vorterix con su desopilante y divertido punto de vista.
+                        Luquitas es futbolero de pura cepa y acompañado de un gran equipo van por el campeonato!!!</p>
+                </div>
+            </div>
+
+            <button class="Secondary" id="ShowButton">
+                Ver mas
+            </button>
+        </div>
+    </section>
+
+    <section class="CTA">
+        <h2>CONTENIDO EXCLUSIVO</h2>
+        <h3>Obtené bloopers, entrevistas exclusivas y episodios perdidos de tu programa favorito</h3>
+        <button class="Primary" id="CtaButton">
+            RECIBIR CONTENIDO
+        </button>
+    </section>
+
+    <section class="Redes">
+        <h2>REDES SOCIALES</h2>
+        <div class="CarouselRedes">
+            <div class="redSocial">
+                <a href="https://www.facebook.com/vorterix">
+                    <img src="./Images/Redes/Facebook.png" alt="">
+                </a>
+            </div>
+
+            <div class="redSocial">
+                <a href="https://www.youtube.com/@VorterixOficial">
+                    <img src="./Images/Redes/Youtube.png" alt="">
+                </a>
+            </div>
+            <div class="redSocial">
+                <a href="https://www.tiktok.com/@vorterixcom">
+                    <img src="./Images/Redes/Tiktok.png" alt="">
+                </a>
+            </div>
+            <div class="redSocial">
+                <a href="https://www.twitch.tv/vorterixok">
+                    <img src="./Images/Redes/Twitch.png" alt="">
+                </a>
+            </div>
+            <div class="redSocial">
+                <a href="https://www.instagram.com/vorterixok">
+                    <img src="./Images/Redes/Ig.png" alt="">
+                </a>
+            </div>
+            <div class="redSocial">
+                <a href="https://open.spotify.com/user/vorterix.com">
+                    <img src="./Images/Redes/Spotify.png" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>VORTERIX</h2>
+        <div class="FootPart">
+            <div class="IconText">
+                <img src="./Images/Iconos/Vector.png" alt="">
+                <h4> info@vorterix.com</h4>
+            </div>
+
+            <div class="IconText" >
+                <img id=iconImg2 src="./Images/Iconos/ubiIcon.png" alt="">
+                <h4> Av. Federico Lacroze</h4>
+            </div>
+        </div>
+        <h3>Legales</h3>
+        <div>
+            <div class="contenido">
+                <a href="">
+                    Términos del servicio
+                </a>
+                <a href="">
+                    Política de privacidad
+                </a>
+                <a href="">
+                    Política DMCA
+                </a>
+                <h4>
+                    © 2024 vorterix
+                </h4>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>
