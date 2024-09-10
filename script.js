@@ -31,3 +31,20 @@ function changeImages(option) {
         container.classList.remove('pop-effect');
     }, 300);  // Elimina la clase después de 300ms (duración de la animación)
 }
+
+function openPopup(popupId) {
+    document.getElementById(popupId).classList.remove('hidden');
+}
+
+function closePopup(popupId) {
+    document.getElementById(popupId).classList.add('hidden');
+}
+
+// Opcional: Cerrar el pop-up al hacer clic en el overlay
+document.querySelectorAll('.popup-overlay').forEach(overlay => {
+    overlay.addEventListener('click', function () {
+        closePopup(this.parentElement.id);
+    });
+});
+
+
