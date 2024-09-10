@@ -30,8 +30,6 @@
 
 body {
     background-color: #121212;
-    
-
 }
 
 .header {
@@ -221,13 +219,14 @@ body {
 /* I N I C I O  POP UP 3*/
 .popUp-3 {
     display: flex;
+    margin-left: 290px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 70%;
     height: auto;
     /* Asegúrate de que la altura se ajuste automáticamente al contenido */
-    background-color: #121212;
+    background-color: #181818;
     /* Esto es opcional, solo para ver mejor el contenedor */
     padding: 20px;
     /* Añade un poco de espacio interno si es necesario */

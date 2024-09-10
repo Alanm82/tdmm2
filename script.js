@@ -3,7 +3,7 @@ function changeImages(option) {
     let imagesSet = {
         1: ['./img/PopUp3/ST1.jpg', './img/PopUp3/ST2.jpg', './img/PopUp3/ST3.jpg', './img/PopUp3/ST4.jpg'],
         2: ['./img/PopUp3/W1.png', './img/PopUp3/W2.png', './img/PopUp3/W3.png', './img/PopUp3/W4.png'],
-        3: ['./img/PopUp3/O1.jpg', './img/PopUp3/O2.jpg', './img/PopUp3/O3.jpg', './img/PopUp3/O4.jpg'],
+        3: ['./img/PopUp3/O1.png', './img/PopUp3/O2.png', './img/PopUp3/O3.png', './img/PopUp3/O4.png'],
         4: ['./img/PopUp3/BB1.png', './img/PopUp3/BB2.png', './img/PopUp3/BB3.png', './img/PopUp3/BB4.png']
     };
 
