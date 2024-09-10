@@ -242,8 +242,6 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -255,8 +253,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -268,21 +265,32 @@ body {
     display: none;
 }
 
+/* Bloqueo de desplazamiento en el fondo cuando el popup está abierto */
+body.popup-open {
+    overflow: hidden; /* Evita el scroll en el fondo */
+}
+
 .popup-overlay {
-    position: absolute;
+    position: fixed; /* Asegura que el overlay cubra toda la pantalla */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+    z-index: 999; /* Asegura que esté detrás del contenido del popup */
 }
 
 .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     background: #181818;
     padding: 20px;
     border-radius: 8px;
-    z-index: 10;
+    max-height: 80vh; /* Limita la altura máxima del pop-up */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es grande */
+    z-index: 1000; /* Asegura que el contenido esté sobre el overlay */
 }
 
 .popup-content .cerrar {
@@ -294,6 +302,7 @@ body {
 
 .popUp-3 h1 {
     font-size: 48px;
+    text-align: center;
 }
 
 .popUp-3 h4 {
@@ -303,6 +312,8 @@ body {
 
 .display4Images {
     display: grid;
+    width: 90%;
+    height: auto;
     grid-template-columns: repeat(2, 1fr);
     /* Dos columnas para las imágenes */
     gap: 16px;
@@ -319,9 +330,10 @@ body {
 
 .image-option {
     position: relative;
+    justify-content: center;
     border-radius: 10px;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .image-option img {
@@ -351,9 +363,9 @@ body {
 
 .options {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     /* Distribuye uniformemente las opciones */
-    gap: 24px;
+    gap: 32px;
     /* Espacio entre las opciones */
 }
 

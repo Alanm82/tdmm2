@@ -34,16 +34,27 @@ function changeImages(option) {
 
 function openPopup(popupId) {
     document.getElementById(popupId).classList.remove('hidden');
+    // Desactivar el desplazamiento en el fondo
+    document.body.style.overflow = 'hidden';
 }
 
 function closePopup(popupId) {
     document.getElementById(popupId).classList.add('hidden');
+    // Rehabilitar el desplazamiento en el fondo
+    document.body.style.overflow = '';
 }
 
 // Opcional: Cerrar el pop-up al hacer clic en el overlay
 document.querySelectorAll('.popup-overlay').forEach(overlay => {
     overlay.addEventListener('click', function () {
         closePopup(this.parentElement.id);
+    });
+});
+
+// Cerrar el pop-up cuando se haga clic en el botón de cerrar dentro del pop-up
+document.querySelectorAll('.popup-content .cerrar').forEach(button => {
+    button.addEventListener('click', function () {
+        closePopup(this.closest('.popup').id);
     });
 });
 
