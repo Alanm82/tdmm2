@@ -30,6 +30,9 @@
 
 body {
     background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .header {
@@ -175,11 +178,9 @@ body {
 
 /* POP UP 1 */
 .popup1 {
-    height: 2400px;
+    height:auto;
     width: 1065px;
     background-color: #181818;
-    margin-left: 450px;
-    margin-top: 200px;
     border-radius: 30px;
 }
 
@@ -246,58 +247,6 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-}
-
-/* Estilos para los pop-ups */
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    color: aliceblue;
-}
-
-.popup.hidden {
-    display: none;
-}
-
-/* Bloqueo de desplazamiento en el fondo cuando el popup está abierto */
-body.popup-open {
-    overflow: hidden; /* Evita el scroll en el fondo */
-}
-
-.popup-overlay {
-    position: fixed; /* Asegura que el overlay cubra toda la pantalla */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
-    z-index: 999; /* Asegura que esté detrás del contenido del popup */
-}
-
-.popup-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background: #181818;
-    padding: 20px;
-    border-radius: 8px;
-    max-height: 80vh; /* Limita la altura máxima del pop-up */
-    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es grande */
-    z-index: 1000; /* Asegura que el contenido esté sobre el overlay */
-}
-
-.popup-content .cerrar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
 }
 
 .popUp-3 h1 {
@@ -394,3 +343,58 @@ body.popup-open {
 }
 
 /* F I N  POP UP 3*/
+
+/* Estilos para los pop-ups E N  GENERAL */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    z-index: 1000;
+    color: aliceblue;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+/* Bloqueo de desplazamiento en el fondo cuando el popup está abierto */
+body.popup-open {
+    overflow: hidden; /* Evita el scroll en el fondo */
+}
+
+.popup-overlay {
+    position: fixed; /* Asegura que el overlay cubra toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+    z-index: 999; /* Asegura que esté detrás del contenido del popup */
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: #181818;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 80vh; /* Limita la altura máxima del pop-up */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es grande */
+    z-index: 1000; /* Asegura que el contenido esté sobre el overlay */
+}
+
+.popup-content .cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* F I N  P O P U P  G E N E R A L */
