@@ -11,10 +11,11 @@
 </html>
 
 <body>
-    <header class="header">
-        <img src="img/netflixLogo.png" class="logo" alt="">
-    </header>
-    <section class="comienzo oculto">
+
+    <section id="pantalla1" class="comienzo">
+        <header class="header">
+            <img src="img/netflixLogo.png" class="logo" alt="">
+        </header>
         <div class="isis">
             <div class="titulillo">
                 <h1>¿Cómo funcionan los sistemas de recomendación en Netflix?</h1>
@@ -24,34 +25,34 @@
                     artificial.</h2>
             </div>
             <div class="boton">
-                <button onclick="">Empezar</button>
+                <button onclick="mostrarPantalla2()">Empezar</button>
             </div>
         </div>
     </section>
-    <section class="ppal">
-        <img src="img/image2.png" class="img_ppal">
-        <img src="img/rectangulo.png" class="rectangulo1">
-        <img src="img/rectangulo2.png" class="rectangulo2">
-
-        <h1>SISTEMAS DE RECOMENDACION</h1>
-        <h2>Algoritmos de personalización de Netflix</h2>
-        <p>Netflix recopila toda la información en su base de datos. Es más, en cada cuenta de Netflix se genera una
-            base de comportamiento distinta para cada uno de los perfiles creados. De este modo, no se mezclan gustos,
-            ni recomendaciones. Es decir, que las sugerencias que aparezcan en tu perfil, no tienen por qué ser las
-            mismas que aparezcan en el perfil de tu hermano, tu mujer o de la persona con la que compartas la cuenta.  
-            Netflix asegura que esa información que recopila no se comparte ni se vende a terceros, y que es
-            exclusivamente para uso interno. Lo que se sabe hoy es que los datos son el nuevo oro y, en esto, los
-            algoritmos de las grandes empresas tecnológicas son insanamente ricos. </p>
-        <h5>Núcleos</h5>
-        <div class="slide-container">
-            <div class="contImage">
-                <img src="img/comoVe.png" onclick="openPopup('popup1')">
-            </div>
-            <div class="contImage">
-                <img src="img/comoMe.png" onclick="openPopup('popup2')">
-            </div>
-            <div class="contImage">
-                <img src="img/comoMu.png" onclick="openPopup('popup3')">
+    <section id="pantalla2" class="ppal oculto">
+        <div class="homeContent">
+            <h1>SISTEMAS DE RECOMENDACION</h1>
+            <h2>Algoritmos de personalización de Netflix</h2>
+            <p>Netflix recopila toda la información en su base de datos. Es más, en cada cuenta de Netflix se genera una
+                base de comportamiento distinta para cada uno de los perfiles creados. De este modo, no se mezclan
+                gustos,
+                ni recomendaciones. Es decir, que las sugerencias que aparezcan en tu perfil, no tienen por qué ser las
+                mismas que aparezcan en el perfil de tu hermano, tu mujer o de la persona con la que compartas la
+                cuenta.  
+                Netflix asegura que esa información que recopila no se comparte ni se vende a terceros, y que es
+                exclusivamente para uso interno. Lo que se sabe hoy es que los datos son el nuevo oro y, en esto, los
+                algoritmos de las grandes empresas tecnológicas son insanamente ricos. </p>
+            <h5>Núcleos</h5>
+            <div class="slide-container">
+                <div class="contImage">
+                    <img src="img/comoVe.png" onclick="openPopup('popup1')">
+                </div>
+                <div class="contImage">
+                    <img src="img/comoMe.png" onclick="openPopup('popup2')">
+                </div>
+                <div class="contImage">
+                    <img src="img/comoMu.png" onclick="openPopup('popup3')">
+                </div>
             </div>
         </div>
     </section>
@@ -117,7 +118,7 @@
     <!-- FIN DE POP UP 1-->
 
     <!-- Inicio POP UP 3-->
-    <section id="popup3" class="popup hidden popUp-3" >
+    <section id="popup3" class="popup hidden popUp-3">
         <div class="popup-overlay" onclick="closePopup('popup3')"></div>
         <div class="popup-content">
             <img src="img/CERRAR.png" class="cerrar" onclick="closePopup('popup3')">
@@ -148,7 +149,7 @@
 
             <div class="options">
                 <div class="option" onclick="changeImages(1)">
-                <img src=" ./img/PopUp3/option1.png" alt="">
+                    <img src=" ./img/PopUp3/option1.png" alt="">
                 </div>
                 <div class="option" onclick="changeImages(2)">
                     <img src="./img/PopUp3/option2.png" alt="">

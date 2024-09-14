@@ -1,3 +1,15 @@
+function mostrarPantalla2() {
+    // Añadir clase 'oculto' a la pantalla 1 para ocultarla
+    var pantalla1 = document.getElementById('pantalla1');
+    pantalla1.classList.add('oculto');
+
+    // Quitar clase 'oculto' de la pantalla 2 para mostrarla
+    var pantalla2 = document.getElementById('pantalla2');
+    pantalla2.classList.remove('oculto');
+}
+
+
+
 function changeImages(option) {
     // Definir las nuevas imágenes según la opción seleccionada
     let imagesSet = {
