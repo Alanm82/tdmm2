@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "fuente1";
+    src: url("./fuentes/fuente1.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "fuente2";
+    src: url("./fuentes/fuente2.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "fuente3";
+    src: url("./fuentes/fuente3.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "fuente4";
+    src: url("./fuentes/fuente4.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "fuente5";
+    src: url("./fuentes/fuente5.ttf");
+    font-weight: normal;
+}
+
+body{
+    background-color: #0E090A;
+}
+
+
+/* T E X T C O N F I G   G E N E R A L*/
+h2{
+    color:white;
+}
+
+p{
+    color:white;
+}
+
+/*F I N    T E X T C O N F I G   G E N E R A L*/
+.pantallaGeneral {
+    height: 100vh; /* Asegúrate de que ocupe el 100% de la ventana */
+    background-color: #0E090A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrará verticalmente */
+    align-items: center; /* Centrará horizontalmente */
+}
+
+.titulo h1{
+    font-family: "fuente1";
+    color: #D81F26;
+    font-size: 60px;
+    width: auto;
+    
+}
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    /* Distribuye uniformemente las opciones */
+    gap: 30px;
+    /* Espacio entre las opciones */
+}
+
+.titulo h2{
+    color:#D81F26;
+}
+.lineaRoja{
+    background-color: #D81F26;
+    justify-self: center;
+    height: 5px;
+    width: 250px;
+    border-radius: 100px;;
+    margin-top: 7.1%;
+}
+.titulo2 h1{
+    font-family: "fuente1";
+    color: #F9F7F4;
+    font-size: 80px;   
+    text-align: center;
+    margin: 0px 10%;
+}
+
+    .pantalla {
+        display: none; /* Todas las pantallas estarán ocultas inicialmente */
+    }
+    .mostrar {
+        display: block; /* Esta clase se aplicará para mostrar la pantalla */
+    }
+
+.boton{
+    margin-top: 40px;
+    background-color: #D81F26;
+    color:#F9F7F4;
+    font-size: 40px;
+    font-family: "fuente1";
+    border:none;
+    width: fit-content;
+    padding: 32px 24px;
+}
+
+/* P A N T A L L A  3 */
+
+#pantalla3{
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+}
+
+.texto{
+    margin: 8px 24px;
+    display: flex;
+    flex-direction: column;
+}
+/* P A N T A L L A  3  F I N */
+
+
