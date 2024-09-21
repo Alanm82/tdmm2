@@ -28,98 +28,292 @@
     font-weight: normal;
 }
 
-body{
+:root {
+    --rojo-1: #D81F26;
+    /* Color rojo más brillante */
+    --rojo-2: #CE0023;
+    /* Rojo más oscuro */
+    --blanco: #F8F9F2;
+}
+
+body {
     background-color: #0E090A;
+    margin-top: 0px;
 }
 
 
 /* T E X T C O N F I G   G E N E R A L*/
-h2{
-    color:white;
+h2 {
+    font-size: 60px;
+    margin: 8px;
+    color: white;
 }
 
-p{
-    color:white;
+h3 { 
+    font-size: 50px;
+    margin: 12px 0px;
+}
+
+h4{
+    font-size: 30px;
+    margin: 12px 0px;
+}
+
+p {
+    font-size: 28px;
+    color: white;
+}
+
+.negro{
+    color: black;
+}
+.rojo {
+    color: var(--rojo-1);
 }
 
 /*F I N    T E X T C O N F I G   G E N E R A L*/
-.pantallaGeneral {
-    height: 100vh; /* Asegúrate de que ocupe el 100% de la ventana */
+.inicio {
+    height: 100vh;
+    /* Asegúrate de que ocupe el 100% de la ventana */
     background-color: #0E090A;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrará verticalmente */
-    align-items: center; /* Centrará horizontalmente */
+    justify-content: center;
+    /* Centrará verticalmente */
+    align-items: center;
+    /* Centrará horizontalmente */
 }
 
-.titulo h1{
+.titulo h1 {
     font-family: "fuente1";
     color: #D81F26;
     font-size: 60px;
     width: auto;
-    
+    white-space: nowrap;
+
 }
 
-.titulo{
+.titulo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     justify-items: center;
+    width: 60%;
     /* Distribuye uniformemente las opciones */
     gap: 30px;
     /* Espacio entre las opciones */
 }
 
-.titulo h2{
-    color:#D81F26;
+.titulo h2 {
+    color: #D81F26;
 }
-.lineaRoja{
+
+/* P A N T A L L A  2*/
+
+.pantalla2 {
+    height: auto;
+    background-color: #0E090A;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 5%;
+}
+
+.lineas {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 110%;
+    height: 50px;
+}
+
+.linea1 {
+    height: 50%;
+    background-color: var(--rojo-1);
+    width: 100%;
+}
+
+.linea2 {
+    height: 50%;
+    background-color: var(--rojo-2);
+    width: 100%;
+}
+
+.pantalla2 h2 {
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.pantalla2 .lineaRoja {
+    margin-top: 4%;
+}
+
+.pantalla2 .titulo {
+    width: 60%;
+    margin-top: 5%;
+}
+
+.pantalla2 .titulo2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 60%;
+    gap: 8px;
+}
+
+.pantalla2 .lineaRojaLarga {
+    margin-top: 0px;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.contenido img {
+    width: auto;  /* Ajusta el ancho */
+    height: 200px;  /* Mantiene la relación de aspecto */
+    align-self: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    width:46%;
+    margin-left: 5%; 
+}
+.contenido h3{
+    color: var(--rojo-1);
+}
+
+.contenido p{
+    color: white ;
+    margin: 12px 0px;
+}
+/* P A N T A L L A  2    F I N*/
+
+
+
+/* P A N T A L L A  3*/
+
+.lineaRoja {
     background-color: #D81F26;
     justify-self: center;
     height: 5px;
-    width: 250px;
-    border-radius: 100px;;
+    width: 100%;
+    border-radius: 100px;
     margin-top: 7.1%;
 }
-.titulo2 h1{
+
+.titulo2 h1 {
     font-family: "fuente1";
     color: #F9F7F4;
-    font-size: 80px;   
+    font-size: 80px;
     text-align: center;
     margin: 0px 10%;
 }
 
-    .pantalla {
-        display: none; /* Todas las pantallas estarán ocultas inicialmente */
-    }
-    .mostrar {
-        display: block; /* Esta clase se aplicará para mostrar la pantalla */
-    }
+.oculto {
+    display: none;
+    /* Todas las pantallas estarán ocultas inicialmente */
+}
 
-.boton{
+.boton {
     margin-top: 40px;
     background-color: #D81F26;
-    color:#F9F7F4;
+    color: #F9F7F4;
     font-size: 40px;
     font-family: "fuente1";
-    border:none;
+    border: none;
     width: fit-content;
     padding: 32px 24px;
 }
 
 /* P A N T A L L A  3 */
 
-#pantalla3{
-    background-color: gray;
+.pantalla3 {
+    height: 70vh;
+    background-color: var(--blanco);
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
 }
 
-.texto{
+.pantalla3 h1,p{
+    color: black;
+    margin: 12px 0px;
+}
+
+.pantalla3 h1 , h4{
+    color: var(--rojo-1);
+}
+
+.pantalla3 h4{
+    margin-top: 32px;
+    margin-bottom: 0px;
+}
+
+.pantalla3 .lineaRoja{
+    margin-top: 0px;
+}
+
+.texto {
     margin: 8px 24px;
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 45%;
 }
+
 /* P A N T A L L A  3  F I N */
 
 
+/* E L E C C I O N  D E  N U C L E O */
+
+.eleccionNucleo{
+    height: 1030px;
+    background-color: #140F10;
+    font-family: "fuente2";
+    font-size: 30px;
+    color: #EAE8E8;
+ }
+ .miau{
+     padding-top: 200px;
+ }
+ .seleccionaTema h1{
+     margin-left: 750px;
+     padding-bottom: 50px;
+ }
+ .flex{
+   
+     display: flex;
+     gap: 80px;
+ }
+ .nucleos{
+    height: 250px;
+    width: 260px;
+   
+ }
+ .recop{
+     margin-left: 480px;
+     width: 250px;
+ }
+ .algoritmo{
+     width: 250px;
+ }
+ .personalizacion{
+     width: 250px;
+ }
+ .flex h2{
+     font-size: 30px;
+     text-align: center;
+ }
+ /* F I N  D E  E L E C C I O N  D E  N U C L E O */
