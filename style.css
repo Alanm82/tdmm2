@@ -522,3 +522,132 @@ h4 {
     margin-bottom: -200px;
 }
 /* F I N  D E  R E C O P  D E  D A T O S */
+
+/* I N I C I O  ARTWORK*/
+.artWork {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: auto;
+    background-color: #181818;
+    color: aliceblue;
+}
+
+.artWork-Content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    gap: 24px;
+}
+
+.artWork h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.artWork h3 {
+    font-size: 40px;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.artWork p {
+    font-size: 28px;
+    text-align: center;
+    color: var(--blanco);
+}
+
+span{
+    color: var(--rojo-1);
+}
+
+.display4Images {
+    display: grid;
+    width: 70%;
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    /* Dos columnas para las imágenes */
+    gap: 16px;
+    /* Espacio entre imágenes */
+    margin-top: 2%;
+    margin-bottom: 2%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.display4Images.pop-effect{
+    transform: scale(1.05);
+    opacity: 0.7;
+}
+
+.image-option {
+    position: relative;
+    justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.image-option img {
+    width: 100%;
+    min-height: 200px;
+    max-height: 310px;
+    height: auto;
+    /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    border-radius: 10px;
+}
+
+
+.image-text {
+    position: absolute;
+    bottom: 10px;
+    /* Ajusta la distancia desde la parte inferior */
+    left: 10px;
+    /* Ajusta la distancia desde la parte izquierda */
+    color: white;
+    /* Color del texto */
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente */
+    padding: 5px 10px;
+    /* Espaciado interno del texto */
+    border-radius: 5px;
+    /* Bordes redondeados opcionales */
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    /* Distribuye uniformemente las opciones */
+    gap: 32px;
+    /* Espacio entre las opciones */
+}
+
+.option {
+    position: relative;
+    width: auto;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    /* Oculta el tamaño adicional de la imagen */
+    transition: transform 0.3s ease;
+}
+
+.option img {
+    display: block;
+    width: 100%;
+    height:100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.option:hover {
+    transform: scale(1.1);
+    border: 2px solid red;
+    border-radius: 5px;
+}
+
+/* F I N  ARTWORK*/

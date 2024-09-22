@@ -1,49 +1,120 @@
-function drawChart() {
-  // Define the chart to be drawn.
-  var data = google.visualization.arrayToDataTable([
-         ['Genero', 'Porcentaje', { role: 'style' }, { role: 'annotation' } ],
-         ['Drama', 20, '#B7D9E1', '20' ],
-         ['Comedia', 20, '#B7D9E1', '20' ],
-         ['Terror', 20, '#C2E0C6', '20' ],
-         ['Romance', 20, '#E1B7D9', '20' ],
-         ['Acción', 20, '#F2C2B7', '20' ]
-      ]);
+let myChart = document.getElementById('myChart').getContext('2d');
 
-  // Opciones del gráfico
-  var options = {
-    title: '',
-    tooltip: {isHtml: false},
-    backgroundColor: 'transparent',  // Fondo negro
-    width: 1000,
-    height: 200,
-    hAxis: {
-      textStyle: { color: '#fff' },  // Color de los textos en el eje X
-      gridlines: { color: 'transparent' }  // Sin líneas de fondo en X
-    },
-    vAxis: {
-      textPosition: 'none',
-      gridlines: { color: 'transparent' },  // Sin líneas de fondo en Y
-      minValue: 0,
-      maxValue: 100
-    },
-    legend: { position: 'none' },  // Sin leyenda
-    bar: { groupWidth: '80%' },  // Ancho del grupo de barras
-    annotations: {
-      textStyle: {
-        color: "#D9D9D9", // Color del texto de las anotaciones
-        position: 'top', // Centramos el texto dentro de la barra
-        pattern: '{value}%',
-        fontSize: 14,
-        // Ajustamos el espaciado para que el texto quede dentro de la barra
-        baseline: 'bottom'
-      }
-    },
+let chartData = {
+    labels: ['Drama', 'Comedia', 'Terror', 'Romance', 'Acción'],
+    datasets: [{
+        label: '',
+        data: [20, 20, 20, 20, 20],
+        backgroundColor: ['#1A1A1A', '#1A1A1A', '#1A1A1A', '#1A1A1A', '#1A1A1A'],
+        borderWidth: 4,
+        borderColor: '#D9D9D9',
+        hoverBorderWidth: 3,
+        hoverBorderColor: 'black'
+    }]
+};
 
-  };
+let massPopChart = new Chart(myChart, {
+    type: 'bar',
+    data: chartData,
+    options: {
+        plugins: {
+            legend: {
+                display: false // Esto oculta la leyenda
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    display: false
+                },
+                grid: {
+                    display: false // Oculta las líneas de la cuadrícula del eje Y
+                }
+            },
+            x: {
+                grid: {
+                    display: false // Opcional: oculta la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'white', // Cambia el color de los nombres a blanco
+                    font: {
+                        size: 20,// Cambia el tamaño de la fuente (ajusta según lo que necesites)
+                    }
+                }
+            }
+        },
+        barThickness: 90, // Cambia este valor para ajustar el ancho de las barras
+        barPercentage: 1.0,
+        categoryPercentage: 1.0,
+        layout: {
+            padding: {
+                left: 150, // Espaciado izquierdo
+                right: 50,
+                top: 200,
+                bottom: 0
+            }
+        }
+    }
+});
 
-  
+// Llama a updateChart para renderizar el gráfico inicialmente
+updateChart();
 
-  // Instantiate and draw the chart.
-  var chart = new google.visualization.ColumnChart(document.getElementById('columnChart'));
-  chart.draw(data, options);
+let genres = ['Terror', 'Comedia', 'Romance'];
+let genreIndexes = [2, 1, 3];
+let currentGenreIndex = 0;
+
+const genreName = document.getElementById('genreName');
+const addBtn = document.getElementById('addBtn');
+const subtractBtn = document.getElementById('subtractBtn');
+
+function updateChart() {
+    massPopChart.update();
+    updateValues();
 }
+
+function modifyOthers(currentIndex, amount) {
+    for (let i = 0; i < chartData.datasets[0].data.length; i++) {
+        if (i !== currentIndex) {
+            chartData.datasets[0].data[i] = Math.min(100, chartData.datasets[0].data[i] + amount);
+        }
+    }
+}
+
+function updateValues() {
+    document.getElementById('dramaValue').textContent = chartData.datasets[0].data[0];
+    document.getElementById('comediaValue').textContent = chartData.datasets[0].data[1];
+    document.getElementById('terrorValue').textContent = chartData.datasets[0].data[2];
+    document.getElementById('romanceValue').textContent = chartData.datasets[0].data[3];
+    document.getElementById('accionValue').textContent = chartData.datasets[0].data[4];
+}
+
+function nextGenre() {
+    currentGenreIndex++;
+    if (currentGenreIndex < genres.length) {
+        genreName.textContent = genres[currentGenreIndex];
+    } else {
+        genreName.textContent = '¡Finalizado!';
+        addBtn.disabled = true;
+        subtractBtn.disabled = true;
+    }
+    updateChart();
+}
+
+addBtn.addEventListener('click', () => {
+    let genreIndex = genreIndexes[currentGenreIndex];
+    chartData.datasets[0].data[genreIndex] = Math.min(100, chartData.datasets[0].data[genreIndex] + 10);
+    modifyOthers(genreIndex, -2.5);
+    nextGenre();
+});
+
+subtractBtn.addEventListener('click', () => {
+    let genreIndex = genreIndexes[currentGenreIndex];
+    chartData.datasets[0].data[genreIndex] = Math.max(0, chartData.datasets[0].data[genreIndex] - 10);
+    modifyOthers(genreIndex, 2.5);
+    nextGenre();
+});
+
+// Inicializar valores al cargar
+updateValues();

@@ -1,6 +1,6 @@
 function cambiarPantalla() {
-    const pantallas = ["pantalla1", "pantalla2", "pantalla3", "pantalla4", "pantalla5"];
-    const clases = ["oculto", "pantalla2" ,"pantalla3", "eleccionNucleo", "recopDatos"];
+    const pantallas = ["pantalla1", "pantalla2", "pantalla3", "pantalla4", "pantalla5" , "pantalla7"];
+    const clases = ["oculto", "pantalla2" ,"pantalla3", "eleccionNucleo", "recopDatos" , "artWork"];
 
     for (let i = 0; i < pantallas.length; i++) {
         let pantalla = document.getElementById(pantallas[i]);
@@ -13,123 +13,41 @@ function cambiarPantalla() {
         }
     }
 }
-let myChart = document.getElementById('myChart').getContext('2d');
 
-let chartData = {
-    labels: ['Drama', 'Comedia', 'Terror', 'Romance', 'Acción'],
-    datasets: [{
-        label: '',
-        data: [20, 20, 20, 20, 20],
-        backgroundColor: ['#1A1A1A', '#1A1A1A', '#1A1A1A', '#1A1A1A', '#1A1A1A'],
-        borderWidth: 4,
-        borderColor: '#D9D9D9',
-        hoverBorderWidth: 3,
-        hoverBorderColor: 'black'
-    }]
-};
 
-let massPopChart = new Chart(myChart, {
-    type: 'bar',
-    data: chartData,
-    options: {
-        plugins: {
-            legend: {
-                display: false // Esto oculta la leyenda
-            }
-        },
-        scales: {
-            y: {
-                beginAtZero: true,
-                ticks: {
-                    display: false
-                },
-                grid: {
-                    display: false // Oculta las líneas de la cuadrícula del eje Y
-                }
-            },
-            x: {
-                grid: {
-                    display: false // Opcional: oculta la cuadrícula en el eje X
-                },
-                ticks: {
-                    color: 'white', // Cambia el color de los nombres a blanco
-                    font: {
-                        size: 20,// Cambia el tamaño de la fuente (ajusta según lo que necesites)
-                    }
-                }
-            }
-        },
-        barThickness: 90, // Cambia este valor para ajustar el ancho de las barras
-        barPercentage: 1.0,
-        categoryPercentage: 1.0,
-        layout: {
-            padding: {
-                left: 150, // Espaciado izquierdo
-                right: 50,
-                top: 200,
-                bottom: 0
-            }
-        }
-    }
-});
+// A R T W O R K  C O D E
+function changeImages(option) {
+    // Definir las nuevas imágenes según la opción seleccionada
+    let imagesSet = {
+        1: ['./img/PopUp3/ST1.jpg', './img/PopUp3/ST2.jpg', './img/PopUp3/ST3.jpg', './img/PopUp3/ST4.jpg'],
+        2: ['./img/PopUp3/W1.png', './img/PopUp3/W2.png', './img/PopUp3/W3.png', './img/PopUp3/W4.png'],
+        3: ['./img/PopUp3/O1.png', './img/PopUp3/O2.png', './img/PopUp3/O3.png', './img/PopUp3/O4.png'],
+        4: ['./img/PopUp3/BB1.png', './img/PopUp3/BB2.png', './img/PopUp3/BB3.png', './img/PopUp3/BB4.png']
+    };
 
-// Llama a updateChart para renderizar el gráfico inicialmente
-updateChart();
+    // Seleccionamos el contenedor de las imágenes
+    const container = document.getElementById('image-container');
 
-let genres = ['Terror', 'Comedia', 'Romance'];
-let genreIndexes = [2, 1, 3];
-let currentGenreIndex = 0;
+    // Añadir la clase "pop-effect" temporalmente para la animación
+    container.classList.add('pop-effect');  // Agregamos la clase de animación
 
-const genreName = document.getElementById('genreName');
-const addBtn = document.getElementById('addBtn');
-const subtractBtn = document.getElementById('subtractBtn');
+    // Seleccionamos las imágenes de los perfiles
+    const images = [
+        document.getElementById('image1'),
+        document.getElementById('image2'),
+        document.getElementById('image3'),
+        document.getElementById('image4')
+    ];
 
-function updateChart() {
-    massPopChart.update();
-    updateValues();
+    // Cambiar las imágenes
+    images.forEach((img, index) => {
+        img.src = imagesSet[option][index];
+    });
+
+    // Remover la clase de animación después de la transición
+    setTimeout(() => {
+        container.classList.remove('pop-effect');
+    }, 300);  // Elimina la clase después de 300ms (duración de la animación)
 }
 
-function modifyOthers(currentIndex, amount) {
-    for (let i = 0; i < chartData.datasets[0].data.length; i++) {
-        if (i !== currentIndex) {
-            chartData.datasets[0].data[i] = Math.min(100, chartData.datasets[0].data[i] + amount);
-        }
-    }
-}
-
-function updateValues() {
-    document.getElementById('dramaValue').textContent = chartData.datasets[0].data[0];
-    document.getElementById('comediaValue').textContent = chartData.datasets[0].data[1];
-    document.getElementById('terrorValue').textContent = chartData.datasets[0].data[2];
-    document.getElementById('romanceValue').textContent = chartData.datasets[0].data[3];
-    document.getElementById('accionValue').textContent = chartData.datasets[0].data[4];
-}
-
-function nextGenre() {
-    currentGenreIndex++;
-    if (currentGenreIndex < genres.length) {
-        genreName.textContent = genres[currentGenreIndex];
-    } else {
-        genreName.textContent = '¡Finalizado!';
-        addBtn.disabled = true;
-        subtractBtn.disabled = true;
-    }
-    updateChart();
-}
-
-addBtn.addEventListener('click', () => {
-    let genreIndex = genreIndexes[currentGenreIndex];
-    chartData.datasets[0].data[genreIndex] = Math.min(100, chartData.datasets[0].data[genreIndex] + 10);
-    modifyOthers(genreIndex, -2.5);
-    nextGenre();
-});
-
-subtractBtn.addEventListener('click', () => {
-    let genreIndex = genreIndexes[currentGenreIndex];
-    chartData.datasets[0].data[genreIndex] = Math.max(0, chartData.datasets[0].data[genreIndex] - 10);
-    modifyOthers(genreIndex, 2.5);
-    nextGenre();
-});
-
-// Inicializar valores al cargar
-updateValues();
+// A R T W O R K  C O D E  F I N

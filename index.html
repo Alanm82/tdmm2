@@ -11,9 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Cargar versión UMD -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href=" ./style.css">
-    
-    
-
 </head>
 
 <body>
@@ -26,7 +23,7 @@
             </div>
         </div>
         <div class="titulo2">
-            
+
             <h1>EL SISTEMA DE RECOMENDACIÓN DE NETFLIX</h1>
 
         </div>
@@ -129,7 +126,7 @@
             <div class="izq">
                 <div class="lineaRoja2"></div>
                 <div class="NETFLIX">
-                <h1>NETFLIX</h1>
+                    <h1>NETFLIX</h1>
                 </div>
                 <div class="txt">
                     <h1>Realiza un análisis de las actividades de más de 230 millones de sus usuarios.</h1>
@@ -141,20 +138,19 @@
                         ajustando el peso de cada género.</h1>
                 </div>
 
-                
 
-            <div class="container text-center mt-5">
-                <div class="bar-values">
-                    <h1><span id="dramaValue">20</span>%</h1>
-                    <h1><span id="comediaValue">20</span>%</h1>
-                    <h1><span id="terrorValue">20</span>%</h1>
-                    <h1><span id="romanceValue">20</span>%</h1>
-                    <h1><span id="accionValue">20</span>%</h1>
+
+                <div class="container text-center mt-5">
+                    <div class="bar-values">
+                        <h1><span id="dramaValue">20</span>%</h1>
+                        <h1><span id="comediaValue">20</span>%</h1>
+                        <h1><span id="terrorValue">20</span>%</h1>
+                        <h1><span id="romanceValue">20</span>%</h1>
+                        <h1><span id="accionValue">20</span>%</h1>
+                    </div>
+
+                    <canvas id="myChart" class="mt-4"></canvas>
                 </div>
-                
-                
-                <canvas id="myChart" class="mt-4"></canvas>
-            </div>
 
             </div>
 
@@ -169,8 +165,8 @@
                 <img class="oculto" class="like-dislike" src="./img/eleccion.png" alt="Like y dislike">
                 <div class="botoncillos">
 
-                    <button id="addBtn" class="btn btn-success"></button>   
-                    <button id="subtractBtn" class="btn btn-danger"></button>  
+                    <button id="addBtn" class="btn btn-success"></button>
+                    <button id="subtractBtn" class="btn btn-danger"></button>
                 </div>
                 <div class="txt4">
                     <h2>Te mostramos cómo tus preferencias influyen en las recomendaciones futuras</h2>
@@ -180,7 +176,61 @@
     </section>
     <!-- F I N  D E  R E C O P  D E  D A T O S -->
 
-    <script src="script.js"></script>
+    <!-- Inicio ArtWork-->
+    <section id="pantalla7" class="oculto">
+        <div class="artWork-Content">
+            <h1>Personalización de imágenes de portada</h1>
+            <h3>
+                Se utiliza <span> múltiples versiones de imágenes o miniaturas </span> para la misma serie o película y
+                las muestra de manera personalizada según los hábitos de visualización de cada usuario.
+            </h3>
+
+            <div id="image-container" class="display4Images">
+                <div class="image-option">
+                    <img id="image1" src="./img/PopUp3/ST1.jpg" alt="Stranger Things 1">
+                    <p class="image-text">Perfil 1</text>
+                </div>
+                <div class="image-option">
+                    <img id="image2" src="./img/PopUp3/ST2.jpg" alt="Stranger Things 2">
+                    <p class="image-text">Perfil 2</text>
+                </div>
+                <div class="image-option">
+                    <img id="image3" src="./img/PopUp3/ST3.jpg" alt="Stranger Things 3">
+                    <p class="image-text">Perfil 3</text>
+                </div>
+                <div class="image-option">
+                    <img id="image4" src="./img/PopUp3/ST4.jpg" alt="Stranger Things 4">
+                    <p class="image-text">Perfil 4</text>
+                </div>
+            </div>
+
+            <div class="options">
+                <div class="option" onclick="changeImages(1)">
+                    <img src=" ./img/PopUp3/option1.png" alt="">
+                </div>
+                <div class="option" onclick="changeImages(2)">
+                    <img src="./img/PopUp3/option2.png" alt="">
+                </div>
+                <div class="option" onclick="changeImages(3)">
+                    <img src="./img/PopUp3/option3.png" alt="">
+                </div>
+                <div class="option" onclick="changeImages(4)">
+                    <img src="./img/PopUp3/option4.png" alt="">
+                </div>
+            </div>
+
+            <p>
+                Dependiendo del <span>género preferido</span> por el usuario,
+                las portadas se ajustarán para destacar elementos visuales asociados a ese género.
+                Asimismo, si el usuario tiene un <span>actor favorito</span>,
+                se priorizarán aquellas portadas en las que dicho actor sea más prominente
+            </p>
+
+        </div>
+        <!-- Fin ArtWork-->
+
+        <script src="script.js"></script>
+        <script src="chart.js"> </script>
 </body>
 
 </html>
