@@ -59,6 +59,10 @@ h4{
     margin: 12px 0px;
 }
 
+h5 {
+    font-size: 20px;
+}
+
 p {
     font-size: 28px;
     color: white;
@@ -317,3 +321,107 @@ p {
      text-align: center;
  }
  /* F I N  D E  E L E C C I O N  D E  N U C L E O */
+
+ /* R E C O P  D E  D A T O S*/
+.recopDatos{
+    background-color: #1A1A1A;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.lineaRoja2{
+    background-color: #D81F26;
+    justify-self: center;
+    height: 5px;
+    width: 400px;
+    border-radius: 100px;
+    margin-bottom: -50px;
+}
+.izq { 
+    font-family: "fuente1";
+    color: #D81F26;
+    font-size: 60px;
+    padding-top: 150px;
+    margin-left: 100px;
+}
+.txt{
+    color:#EAE8E8;
+    font-size: 30px;
+    width: 900px;
+    margin-top: -30px;
+    margin-bottom: 50px;
+}
+.lineaRoja3{
+    background-color: #D81F26;
+    justify-self: center;
+    height: 5px;
+    width: 900px;
+    border-radius: 100px;
+    margin-bottom: -50px;
+}
+.txt2{
+    color:#EAE8E8;
+    font-size: 19px;
+    width: 900px;
+    margin-top: 90px;
+}
+.estadisticas{
+    display: flex;
+    gap: 55px;
+    width: fit-content;
+}
+.stat{
+    background-color:#1A1A1A;
+    height: 200px;
+    width: 55px;
+    border-top: 5px solid #D9D9D9;
+  border-right: 5px solid #D9D9D9;
+  border-bottom: 5px solid #D9D9D9;
+  border-left: 5px solid #D9D9D9;
+  font-family: fuente5;
+  font-size: 12px;
+}
+
+.lineaGris{
+    background-color: #D9D9D9;
+    width: 610px;
+    height: 5px;
+    margin-left: 320px;
+    margin-top: -5px;
+}
+.txt3{
+    display: flex;
+    font-size: 15px;
+    font-family: fuente5;
+    gap: 40px;
+    width: fit-content;
+}
+.dos{
+    display: flex;
+}
+
+.titulito{
+    font-family: fuente1;
+    font-size: 30px;
+    color: white;
+    margin-left: 50px;
+}
+.nombrePeli{
+    font-family: fuente2;
+    font-size: 28px;
+    color: white;
+    margin-left: 40px;
+    margin-top: -10px;
+}
+.like-dislike{
+    margin-left: 70px;
+    width: 300px;
+}
+.txt4{
+    font-family: fuente5;
+    text-align: center;
+    font-size: 15px;
+    margin-left: -120px;
+}
+/* F I N  D E  R E C O P  D E  D A T O S */
