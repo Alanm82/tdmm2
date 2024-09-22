@@ -66,6 +66,9 @@ body {
 
 }
 
+.titulo2 h1{
+    color: var(--blanco);
+}
 .titulo h2 {
     font-family: "fuente1";
     color: #D81F26;
