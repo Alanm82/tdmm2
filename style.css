@@ -46,6 +46,7 @@ body {
 }
 
 .inicio {
+    background-image: url(/img/fondo.png); /* Cambia la ruta a tu imagen */
     height: 100vh;
     /* Asegúrate de que ocupe el 100% de la ventana */
     background-color: #0E090A;
@@ -67,8 +68,9 @@ body {
 }
 
 .titulo2 h1{
-    color: var(--blanco);
+    color: #F9F7F4;
 }
+
 .titulo h2 {
     font-family: "fuente1";
     color: #D81F26;
@@ -79,6 +81,7 @@ body {
 }
 
 .titulo {
+    margin-top: -150px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -96,8 +99,8 @@ body {
 /* P A N T A L L A  2*/
 
 .pantalla2 {
-    height: auto;
-    background-color: #0E090A;
+    height: 900px;
+    background-color: #140F10;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -136,7 +139,9 @@ body {
 .pantalla2 .titulo2 h2 {
     color: var(--blanco);
 }
-
+.titulo2 h2{
+    font-size: 70px;
+}
 .pantalla2 .lineaRoja {
     margin-top: 4%;
 }
@@ -164,6 +169,7 @@ body {
     flex-direction: row;
     justify-content: center;
     margin-top: 5%;
+    margin-left: -100px;
 }
 
 .contenido img {
@@ -184,13 +190,15 @@ body {
 .contenido h3 {
     color: var(--rojo-1);
     margin: 12px 0px;
-    font-size: 50px;
+    font-size: 40px;
+    font-family: fuente3;
 }
 
 .contenido p {
+    font-family: fuente5;
     color: white;
     margin: 12px 0px;
-    font-size: 28px;
+    font-size: 25px;
 }
 
 /* P A N T A L L A  2    F I N*/
@@ -205,14 +213,14 @@ body {
     height: 5px;
     width: 100%;
     border-radius: 100px;
-    margin-top: 7.1%;
+    margin-top: 30px;
 }
 
 .titulo2 h1,
 h2 {
     font-family: "fuente1";
-    font-size: 80px;
-    text-align: start;
+    font-size: 85px;
+    text-align: center;
     margin: 0px;
 }
 
@@ -222,7 +230,8 @@ h2 {
 }
 
 .boton {
-    margin-top: 40px;
+    margin-bottom: -150px;
+    margin-top: 150px;
     background-color: #D81F26;
     color: #F9F7F4;
     font-size: 40px;
@@ -233,6 +242,7 @@ h2 {
 }
 
 .pantalla3 {
+    margin-top: -90px;
     height: 70vh;
     background-color: var(--blanco);
     justify-content: center;
@@ -266,6 +276,13 @@ h4 {
     align-items: start;
     width: 45%;
 }
+.texto h4{
+    font-family: fuente3;
+    font-size: 28px;
+}
+.texto p{
+    font-family: fuente5;
+}
 
 .pantalla3 p {
     font-size: 28px;
@@ -280,7 +297,7 @@ h4 {
 .eleccionNucleo {
     height: 1030px;
     background-color: #140F10;
-    font-family: "fuente2";
+    font-family: "fuente5";
     font-size: 30px;
     color: #EAE8E8;
 }
@@ -295,9 +312,12 @@ h4 {
 }
 
 .flex {
-
+    
     display: flex;
     gap: 80px;
+}
+.flex h2{
+    font-family: "fuente5";
 }
 
 .nucleos {
@@ -339,7 +359,7 @@ h4 {
     height: 5px;
     width: 400px;
     border-radius: 100px;
-    margin-bottom: -50px;
+    margin-bottom: 0px;
 }
 
 .izq {
@@ -353,6 +373,7 @@ h4 {
 .txt {
     color: #EAE8E8;
     font-size: 30px;
+    font-family: fuente1;
     width: 900px;
     margin-top: -30px;
     margin-bottom: 50px;
@@ -367,9 +388,10 @@ h4 {
     margin-bottom: -50px;
 }
 
-.txt2 {
+.txt2 h1{
     color: #EAE8E8;
-    font-size: 19px;
+    font-family: fuente2;
+    font-size: 28px;
     width: 900px;
     margin-top: 90px;
 }
@@ -423,12 +445,19 @@ h4 {
 .der {
     margin-left: 300px;
 }
+.der h2{
+    font-family: "fuente5";
+    font-size: 20px;
+    text-align: center;
+}
 
 .titulito {
     font-family: fuente1;
     font-size: 30px;
     color: white;
     margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .nombrePeli {
@@ -436,11 +465,12 @@ h4 {
     font-size: 28px;
     color: white;
     margin-left: 40px;
-    margin-top: -10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .like-dislike {
-    margin-left: 70px;
+    margin-left: 60px;
     width: 300px;
 }
 
@@ -450,6 +480,10 @@ h4 {
     text-align: center;
     font-size: 15px;
     margin-left: -120px;
+}
+.NETFLIX h1{
+    font-size: 90px;
+    margin-bottom: 50px;
 }
 
 /* F I N  D E  R E C O P  D E  D A T O S */
