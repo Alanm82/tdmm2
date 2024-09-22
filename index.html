@@ -141,43 +141,17 @@
                         ajustando el peso de cada género.</h1>
                 </div>
 
-
-              <!--  <div class="estadisticas">
-                    <div class="stat">
-                        <h5>20%</h5>
-                    </div>
-                    <div class="stat">
-                        <h5>20%</h5>
-                    </div>
-                    <div class="stat">
-                        <h5>20%</h5>
-                    </div>
-                    <div class="stat">
-                        <h5>20%</h5>
-                    </div>
-                    <div class="stat">
-                        <h5>20%</h5>
-                    </div>
-                </div>
-
-                <div class="lineaGris"></div>
-
-                <div class="txt3">
-                    <h5>Drama</h5>
-                    <h5>Comedia</h5>
-                    <h5>Terror</h5>
-                    <h5>Romance</h5>
-                    <h5>Acción</h5>
-                </div>
-            -->
+                
 
             <div class="container text-center mt-5">
-                <h2 id="genreName"></h2>
-        
-                <div>
-                    <button id="addBtn" class="btn btn-success">Sumar 10</button>
-                    <button id="subtractBtn" class="btn btn-danger">Restar 10</button>
+                <div class="bar-values">
+                    <h1><span id="dramaValue">20</span>%</h1>
+                    <h1><span id="comediaValue">20</span>%</h1>
+                    <h1><span id="terrorValue">20</span>%</h1>
+                    <h1><span id="romanceValue">20</span>%</h1>
+                    <h1><span id="accionValue">20</span>%</h1>
                 </div>
+                
                 
                 <canvas id="myChart" class="mt-4"></canvas>
             </div>
@@ -186,13 +160,18 @@
 
             <div class="der">
                 <div class="titulito">
-                    <h1>Calificá el título</h1>
+                    <h1>Calificá el título:</h1>
                 </div>
                 <img class="hereditary" src="./img/hereditary.png" alt="Hereditary">
                 <div class="nombrePeli">
-                    <h1>Hereditary (2018)</h1>
+                    <h1 id="genreName"></h1>
                 </div>
-                <img class="like-dislike" src="./img/eleccion.png" alt="Like y dislike">
+                <img class="oculto" class="like-dislike" src="./img/eleccion.png" alt="Like y dislike">
+                <div class="botoncillos">
+
+                    <button id="addBtn" class="btn btn-success"></button>   
+                    <button id="subtractBtn" class="btn btn-danger"></button>  
+                </div>
                 <div class="txt4">
                     <h2>Te mostramos cómo tus preferencias influyen en las recomendaciones futuras</h2>
                 </div>

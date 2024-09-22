@@ -13,17 +13,16 @@ function cambiarPantalla() {
         }
     }
 }
-
-let myChart = document.getElementById('myChart').getContext('2d'); 
+let myChart = document.getElementById('myChart').getContext('2d');
 
 let chartData = {
     labels: ['Drama', 'Comedia', 'Terror', 'Romance', 'Acción'],
     datasets: [{
-        label: 'Películas',
+        label: '',
         data: [20, 20, 20, 20, 20],
-        backgroundColor: ['green', 'red', 'blue', 'yellow', 'orange'],
+        backgroundColor: ['#1A1A1A', '#1A1A1A', '#1A1A1A', '#1A1A1A', '#1A1A1A'],
         borderWidth: 4,
-        borderColor: '#777',
+        borderColor: '#D9D9D9',
         hoverBorderWidth: 3,
         hoverBorderColor: 'black'
     }]
@@ -35,65 +34,59 @@ let massPopChart = new Chart(myChart, {
     options: {
         plugins: {
             legend: {
-                display: false // Desactivar la leyenda para que no se muestre
+                display: false // Esto oculta la leyenda
             }
         },
         scales: {
             y: {
-                grid: {
-                    display: false // Desactivar la grilla en el eje Y
-                },
+                beginAtZero: true,
                 ticks: {
-                    display: false // Ocultar las etiquetas de los valores en el eje Y
-                },
-                border: {
                     display: false
                 },
-                beginAtZero: true // Comenzar el eje Y en 0
+                grid: {
+                    display: false // Oculta las líneas de la cuadrícula del eje Y
+                }
             },
             x: {
                 grid: {
-                    display: false // Desactivar la grilla en el eje X
-                }, 
-                // Ajustes para el espacio entre barras
-                ticks: {
-                    // Aquí puedes agregar más configuraciones si es necesario
+                    display: false // Opcional: oculta la cuadrícula en el eje X
                 },
-                border: {
-                    display: false
+                ticks: {
+                    color: 'white', // Cambia el color de los nombres a blanco
+                    font: {
+                        size: 20,// Cambia el tamaño de la fuente (ajusta según lo que necesites)
+                    }
                 }
             }
         },
-        // Ajustar el tamaño de las barras
-        barThickness: 30, // Modifica este valor para cambiar el tamaño de las barras
-        // Aumentar o reducir el espacio entre las barras
-        barPercentage: 1, // Modifica este valor (0 a 1) para aumentar o reducir el espacio entre barras
-        categoryPercentage: 1, // Modifica este valor (0 a 1) para aumentar o reducir el espacio entre categorías
-        // Ajustar la posición general del gráfico
+        barThickness: 90, // Cambia este valor para ajustar el ancho de las barras
+        barPercentage: 1.0,
+        categoryPercentage: 1.0,
         layout: {
             padding: {
-                left: 20, // Espaciado izquierdo
-                right: 80, // Espaciado derecho
-                top: 40, // Espaciado superior
-                bottom: 10 // Espaciado inferior
-            
+                left: 150, // Espaciado izquierdo
+                right: 50,
+                top: 200,
+                bottom: 0
             }
         }
     }
 });
+
+// Llama a updateChart para renderizar el gráfico inicialmente
+updateChart();
 
 let genres = ['Terror', 'Comedia', 'Romance'];
 let genreIndexes = [2, 1, 3];
 let currentGenreIndex = 0;
 
 const genreName = document.getElementById('genreName');
-genreName.textContent = genres[currentGenreIndex];
-
 const addBtn = document.getElementById('addBtn');
 const subtractBtn = document.getElementById('subtractBtn');
 
 function updateChart() {
     massPopChart.update();
+    updateValues();
 }
 
 function modifyOthers(currentIndex, amount) {
@@ -102,6 +95,26 @@ function modifyOthers(currentIndex, amount) {
             chartData.datasets[0].data[i] = Math.min(100, chartData.datasets[0].data[i] + amount);
         }
     }
+}
+
+function updateValues() {
+    document.getElementById('dramaValue').textContent = chartData.datasets[0].data[0];
+    document.getElementById('comediaValue').textContent = chartData.datasets[0].data[1];
+    document.getElementById('terrorValue').textContent = chartData.datasets[0].data[2];
+    document.getElementById('romanceValue').textContent = chartData.datasets[0].data[3];
+    document.getElementById('accionValue').textContent = chartData.datasets[0].data[4];
+}
+
+function nextGenre() {
+    currentGenreIndex++;
+    if (currentGenreIndex < genres.length) {
+        genreName.textContent = genres[currentGenreIndex];
+    } else {
+        genreName.textContent = '¡Finalizado!';
+        addBtn.disabled = true;
+        subtractBtn.disabled = true;
+    }
+    updateChart();
 }
 
 addBtn.addEventListener('click', () => {
@@ -118,14 +131,5 @@ subtractBtn.addEventListener('click', () => {
     nextGenre();
 });
 
-function nextGenre() {
-    currentGenreIndex++;
-    if (currentGenreIndex < genres.length) {
-        genreName.textContent = genres[currentGenreIndex];
-    } else {
-        genreName.textContent = '¡Finalizado!';
-        addBtn.disabled = true;
-        subtractBtn.disabled = true;
-    }
-    updateChart();
-}
+// Inicializar valores al cargar
+updateValues();
