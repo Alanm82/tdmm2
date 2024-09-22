@@ -1,6 +1,6 @@
 function cambiarPantalla() {
-    const pantallas = ["pantalla1", "pantalla2", "pantalla3"];
-    const clases = ["oculto", "pantalla2" ,"pantalla3"];
+    const pantallas = ["pantalla1", "pantalla2", "pantalla3", "pantalla4", "pantalla5"];
+    const clases = ["oculto", "pantalla2" ,"pantalla3", "eleccionNucleo", "recopDatos"];
 
     for (let i = 0; i < pantallas.length; i++) {
         let pantalla = document.getElementById(pantallas[i]);

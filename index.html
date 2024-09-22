@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <section id="pantalla1" class="inicio">
+    <section id="pantalla1"  class="inicio">
         <div class="titulo">
             <div class="lineaRoja">
             </div>
@@ -91,84 +91,79 @@
         </div>
     </section>
 
-    <!-- ELECCIÓN DE NUCLEO -->
-    <section class="eleccionNucleo">
-        <div class="miau">
-            <div class="seleccionaTema">
-                <h1>Selecciona un tema</h1>
+  <!-- ELECCIÓN DE NUCLEO -->
+<section id="pantalla4" class=oculto class="eleccionNucleo" >
+    <div class="miau">
+        <div class="seleccionaTema">
+            <h1>Selecciona un tema</h1>
+        </div>
+        <div class="flex">
+            <div class="recop">
+                <img class="nucleos" src="./img/recopilacion.png" alt="Recopilación">
+                <h2>Recopilación de Datos</h2>
             </div>
-            <div class="flex">
-                <div class="recop">
-                    <img class="nucleos" src="./img/recopilacion.png" alt="Recopilación">
-                    <h2>Recopilación de Datos</h2>
-                </div>
-                <div class="algoritmo">
-                    <img class="nucleos" src="./img/cerebro.png" alt="Algoritmo">
-                    <h2>Funcionamiento del Algoritmo</h2>
-                </div>
-                <div class="personalizacion">
-                    <img class="nucleos" src="./img/personalizacion.png" alt="Personalización">
-                    <h2>Personalización de portadas</h2>
-                </div>
+            <div class="algoritmo">
+                <img class="nucleos" src="./img/cerebro.png" alt="Algoritmo">
+                <h2>Funcionamiento del Algoritmo</h2>
+            </div>
+            <div class="personalizacion">
+                <img class="nucleos" src="./img/personalizacion.png" alt="Personalización">
+                <h2>Personalización de portadas</h2>
             </div>
         </div>
-    </section>
-    <!-- FIN DE ELECCIÓN DE NUCLEO -->
+    </div>
+</section>
+<!-- FIN DE ELECCIÓN DE NUCLEO -->
 
-    <!-- R E C O P  D E  D A T O S -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
-    <script src="./chart.js"></script>
-    
-    <section class="recopDatos">
+<!-- R E C O P  D E  D A T O S -->
+<section id="pantalla5" class="oculto" class="recopDatos">
+    <div class="dos">
         <div class="izq">
             <div class="lineaRoja2"></div>
             <h1>NETFLIX</h1>
             <div class="txt">
-                <h1>Realiza un análisis de las actividades de más de 230 millones de sus usuarios.</h1>
+                <h1>Realiza un análisis de las actividades de  más de 230 millones de sus usuarios.</h1>
             </div>
             <div class="lineaRoja3"></div>
             <div class="txt2">
-                <h1>Tus elecciones ayudan al algoritmo a conocer mejor tus gustos. Cada <font color="#D81F26">like
-                    </font> o <font color="#D81F26">dislike</font> influye en las recomendaciones que recibirás,
-                    ajustando el peso de cada género.</h1>
+                <h1>Tus elecciones ayudan al algoritmo a conocer mejor tus gustos. Cada <font color="#D81F26">like</font> o <font color="#D81F26">dislike</font> influye en las recomendaciones que recibirás, ajustando el peso de cada género.</h1>
             </div>
-
             <div class="estadisticas">
-                <div class="chart">
-                    <canvas id="barChart"></canvas>
-                </div>
+                <div class="stat"> <h2>20%</h2></div>
+                <div class="stat"> <h2>20%</h2></div>
+                <div class="stat"> <h2>20%</h2></div>
+                <div class="stat"> <h2>20%</h2></div>
+                <div class="stat"> <h2>20%</h2></div>
             </div>
-
+            <div class="lineaGris"></div>
             <div class="txt3">
-                <h5>Drama</h5>
-                <h5>Comedia</h5>
-                <h5>Terror</h5>
-                <h5>Romance</h5>
-                <h5>Acción</h5>
+                <h2>Drama</h2>
+                <h2>Comedia</h2>
+                <h2>Terror</h2>
+                <h2>Romance</h2>
+                <h2>Acción</h2>
             </div>
         </div>
 
 
         <div class="der">
             <div class="titulito">
-                <h1>Calificá el título</h1>
-            </div>
-            <img class="hereditary" src="./img/hereditary.png">
-            <div class="nombrePeli">
-                <h1>Hereditary (2018)</h1>
-            </div>
-            <img class="like-dislike" src="./img/like:dislike.png">
-            <div class="txt4">
-                <h2>Te mostramos cómo tus preferencias influyen en las recomendaciones futuras</h2>
-            </div>
+            <h1>Calificá el título</h1>
         </div>
+        <img class="hereditary" src="./img/hereditary.png">
+        <div class="nombrePeli">
+            <h1>Hereditary (2018)</h1>
+        </div>
+        <img class="like-dislike"src="./img/like:dislike.png">
+        <div class="txt4">
+        <h2>Te mostramos cómo tus preferencias influyen en las recomendaciones futuras</h2>
+    </div>
+        </div>
+    </div>
 
-    </section>
+</section>
 
-    <!-- F I N  D E  R E C O P  D E  D A T O S -->
-
-
+<!-- F I N  D E  R E C O P  D E  D A T O S -->
 
 </body>
 
