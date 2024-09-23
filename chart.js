@@ -1,8 +1,11 @@
+
 let myChart = document.getElementById('myChart').getContext('2d');
 
 let chartData = {
     labels: ['Drama', 'Comedia', 'Terror', 'Romance', 'Acción'],
     datasets: [{
+        responsive: true, // Asegura que el gráfico sea responsivo
+        maintainAspectRatio: false, // Desactiva la relación de aspecto para un ajuste completo
         label: '',
         data: [20, 20, 20, 20, 20],
         backgroundColor: ['#1A1A1A', '#1A1A1A', '#1A1A1A', '#1A1A1A', '#1A1A1A'],
@@ -60,9 +63,8 @@ let massPopChart = new Chart(myChart, {
 
 // Llama a updateChart para renderizar el gráfico inicialmente
 updateChart();
-
 let genres = ['Terror', 'Comedia', 'Romance'];
-let genreIndexes = [2, 1, 3];
+let genreIndexes = [0, 1, 2];
 let currentGenreIndex = 0;
 
 const genreName = document.getElementById('genreName');
@@ -118,3 +120,10 @@ subtractBtn.addEventListener('click', () => {
 
 // Inicializar valores al cargar
 updateValues();
+window.addEventListener('resize', () => {
+    massPopChart.resize(); // Forzar el redimensionamiento del gráfico al cambiar el tamaño de la ventana
+});
+
+function inicializarGrafico() {
+    massPopChart.resize(); // Forzar el redimensionamiento del gráfico al cambiar el tamaño de la ventana
+}

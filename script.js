@@ -1,15 +1,28 @@
 function cambiarPantalla() {
-    const pantallas = ["pantalla1", "pantalla2", "pantalla3", "pantalla4", "pantalla5" , "pantalla7"];
-    const clases = ["oculto", "pantalla2" ,"pantalla3", "eleccionNucleo", "recopDatos" , "artWork"];
+    const pantallas = ["pantalla1", "pantalla2", "pantalla3", "pantalla4", "pantalla5", "pantalla7"];
+    const clases = ["oculto", "pantalla2", "pantalla3", "eleccionNucleo", "recopDatos", "artWork"];
 
     for (let i = 0; i < pantallas.length; i++) {
         let pantalla = document.getElementById(pantallas[i]);
+        
+        // Agregar logs para verificar las pantallas y las clases
+        console.log(`Pantalla: ${pantallas[i]}`);
 
         if (i === 0) {
             pantalla.classList.add(clases[0]);  // Ocultar la primera pantalla
+            console.log(`Ocultando pantalla: ${pantallas[i]}`);
         } else {
             pantalla.classList.remove(clases[0]);  // Mostrar las otras pantallas
             pantalla.classList.add(clases[i]);     // Aplicar clase correspondiente
+            console.log(`Mostrando pantalla: ${pantallas[i]} con clase: ${clases[i]}`);
+        }
+
+        // Verificar si es pantalla5 y tiene la clase "eleccionNucleo"
+        if (pantallas[i] === "pantalla5" && pantalla.classList.contains("recopDatos")) {
+            console.log("Entrando a pantalla5 con clase recopDatos, inicializando gráfico...");
+            inicializarGrafico();  // Llamar a la función que inicializa el gráfico
+        } else {
+            console.log("pantalla5 no tiene la clase recopDatos.");
         }
     }
 }
