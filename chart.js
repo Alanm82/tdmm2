@@ -61,27 +61,9 @@ let massPopChart = new Chart(myChart, {
     }
 });
 
-// Llama a updateChart para renderizar el gráfico inicialmente
-updateChart();
-let genres = ['Terror', 'Comedia', 'Romance'];
-let genreIndexes = [0, 1, 2];
-let currentGenreIndex = 0;
-
-const genreName = document.getElementById('genreName');
-const addBtn = document.getElementById('addBtn');
-const subtractBtn = document.getElementById('subtractBtn');
-
 function updateChart() {
     massPopChart.update();
     updateValues();
-}
-
-function modifyOthers(currentIndex, amount) {
-    for (let i = 0; i < chartData.datasets[0].data.length; i++) {
-        if (i !== currentIndex) {
-            chartData.datasets[0].data[i] = Math.min(100, chartData.datasets[0].data[i] + amount);
-        }
-    }
 }
 
 function updateValues() {
@@ -92,34 +74,81 @@ function updateValues() {
     document.getElementById('accionValue').textContent = chartData.datasets[0].data[4];
 }
 
-function nextGenre() {
-    currentGenreIndex++;
-    if (currentGenreIndex < genres.length) {
-        genreName.textContent = genres[currentGenreIndex];
+// Llama a updateChart para renderizar el gráfico inicialmente
+updateChart();
+let movies = [
+    { title: 'Hereditary (2018)', genre: 'Terror' },
+    { title: 'Vuelo Nocturno (2010)', genre: 'Terror' },
+    { title: 'Película 2', genre: 'Comedia' },
+    { title: 'Película 3', genre: 'Romance' },
+    { title: 'Película 4', genre: 'Acción' },
+    { title: 'Película 5', genre: 'Drama' }
+];
+
+let currentMovieIndex = 0;
+const addBtn = document.getElementById('addBtn');
+const subtractBtn = document.getElementById('subtractBtn');
+let genres = ['Drama', 'Comedia', 'Terror', 'Romance', 'Acción'];
+let genreVotes = [20, 20, 20, 20, 20]; // Inicializamos el gráfico con valores iguales
+
+// Mostrar la película actual
+function showMovie() {
+    // Verificar si currentMovieIndex está dentro del rango
+    if (currentMovieIndex < movies.length) {
+        let currentMovie = movies[currentMovieIndex];
+        document.getElementById('movieTitle').textContent = currentMovie.title;
+        let moviePoster = document.getElementById('moviePoster');
+        moviePoster.src = './img/' + currentMovie.title.replace(/ /g, '_') + '.png';
     } else {
-        genreName.textContent = '¡Finalizado!';
-        addBtn.disabled = true;
-        subtractBtn.disabled = true;
+        // Si se ha finalizado, mostrar el mensaje de finalización
+        document.getElementById('movieTitle').textContent = '¡Finalizado!';
+        moviePoster.src = './img/fin.png'; // Cambia esto por la imagen que quieras mostrar al finalizar
     }
-    updateChart();
 }
 
-addBtn.addEventListener('click', () => {
-    let genreIndex = genreIndexes[currentGenreIndex];
-    chartData.datasets[0].data[genreIndex] = Math.min(100, chartData.datasets[0].data[genreIndex] + 10);
-    modifyOthers(genreIndex, -2.5);
-    nextGenre();
-});
+// Lógica de votación
+function voteMovie(isPositive) {
+    // Verificar si currentMovieIndex está dentro del rango antes de proceder
+    if (currentMovieIndex < movies.length) {
+        let currentMovie = movies[currentMovieIndex];
+        let genreIndex = genres.indexOf(currentMovie.genre);
 
-subtractBtn.addEventListener('click', () => {
-    let genreIndex = genreIndexes[currentGenreIndex];
-    chartData.datasets[0].data[genreIndex] = Math.max(0, chartData.datasets[0].data[genreIndex] - 10);
-    modifyOthers(genreIndex, 2.5);
-    nextGenre();
-});
+        // Verificar si el género de la película está en el arreglo genres
+        if (genreIndex !== -1) {
+            // Actualizamos el valor en el gráfico según el voto
+            if (isPositive) {
+                chartData.datasets[0].data[genreIndex] = Math.min(100, chartData.datasets[0].data[genreIndex] + 10);
+            } else {
+                chartData.datasets[0].data[genreIndex] = Math.max(0, chartData.datasets[0].data[genreIndex] - 10);
+            }
+        } else {
+            console.log(`El género ${currentMovie.genre} no está en el arreglo genres.`);
+        }
 
+        if (currentMovieIndex < movies.length - 1) {
+            currentMovieIndex++;
+        } else {
+            currentMovieIndex = movies.length; // Asegúrate de que el índice esté fuera de rango
+            currentMovie.title = '¡Finalizado!';
+            addBtn.disabled = true;
+            subtractBtn.disabled = true;
+        }
+
+        // Mostramos la nueva película
+        showMovie();
+        updateChart(); // Actualizar gráfico
+    }
+}
+
+// Asignar eventos a los botones
+document.getElementById('addBtn').addEventListener('click', () => voteMovie(true));
+document.getElementById('subtractBtn').addEventListener('click', () => voteMovie(false));
+
+// Inicializar la primera película
+showMovie();
 // Inicializar valores al cargar
 updateValues();
+
 window.addEventListener('resize', () => {
     massPopChart.resize(); // Forzar el redimensionamiento del gráfico al cambiar el tamaño de la ventana
 });
