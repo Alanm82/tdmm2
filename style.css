@@ -689,6 +689,37 @@ span{
 .funAlgoritmo{
     background-color: var(--blanco);
 }
+
+
+.buttonRedondo {
+    position: absolute; 
+    top: 20px; 
+    right: 40px; 
+    z-index: 10; 
+    width: 4%;
+    height: auto;
+}
+
+#btnCerrar {
+    background: red; /* Fondo rojo */
+    border: none; /* Sin borde */
+    color: white; /* Color de la "X" en blanco */
+    font-size: 50px; /* Tamaño de la fuente (ajusta según sea necesario) */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    padding: 10px; /* Relleno para aumentar el área clickeable */
+    margin: 0; /* Sin márgenes */
+    border-radius: 0; /* Sin bordes redondeados, cuadrado */
+    width: 100%; /* Ancho del botón (ajusta según sea necesario) */
+    height: 100%; /* Altura del botón (ajusta según sea necesario) */
+}
+
+#btnCerrar:hover {
+    background: darkred; /* Cambia a un rojo más oscuro al pasar el ratón */
+}
+
+
+
+
 .cont-Algoritmo{
     display: flex;
     flex-direction: column;
@@ -734,6 +765,7 @@ flex-direction: row;
 padding: 0px 100px;
 justify-content: space-between;
 align-items: center;
+padding-bottom: 6%;
 }
 
 .contGrafico h2, h3{
@@ -824,4 +856,5 @@ align-items: center;
 
 .noAparece{
     display: none;
+    visibility: hidden;
 }

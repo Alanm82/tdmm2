@@ -107,7 +107,7 @@
                     <h2>Recopilación de Datos</h2>
                 </div>
                 <div class="algoritmo">
-                    <img class="zoom-img" class="nucleos" src="./img/cerebro.png" alt="Algoritmo">
+                    <img class="zoom-img" class="nucleos" src="./img/cerebro.png" alt="Algoritmo" onclick="mostrarPantalla('pantalla6')">
                     <h2>Funcionamiento del Algoritmo</h2>
                 </div>
                 <div class="personalizacion">
@@ -122,6 +122,9 @@
     <!-- R E C O P  D E  D A T O S -->
 
     <section class="noAparece" id="pantalla5" class="recopDatos">
+        <div class="buttonRedondo">
+            <button id="btnCerrar" class="buttonCerrar">X</button>
+        </div>
         <div class="dos">
             <div class="izq">
                 <div class="lineaRoja2"></div>
@@ -183,6 +186,9 @@
 
     <!-- Inicio ArtWork-->
     <section id="pantalla7" class="noAparece">
+        <div class="buttonRedondo">
+            <button id="btnCerrar" class="buttonCerrar">X</button>
+        </div>
         <div class="artWork-Content">
             <h1>Personalización de imágenes de portada</h1>
             <h3>
@@ -238,14 +244,17 @@
         <!-- INICIO  F U N C I O N A M I E N T O  A L G O R I T M O-->
     <section id="pantalla6" class="noAparece" class="funAlgoritmo">
         <div class="cont-Algoritmo">
-            <div class="encabezado">
-                <div class="texto">
-                    <h1>EL 75% DE LAS VISTAS</h1>
-                    <h3>PROVIENEN DE RECOMENDACIONES GENERADAS
-                        POR SU <span>ALGORITMO</span></h3>
-                </div>
-                <div class="lineaRoja"></div>
+            <div class="buttonRedondo">
+                <button id="btnCerrar" class="buttonCerrar">X</button>
             </div>
+                <div class="encabezado">
+                    <div class="texto">
+                        <h1>EL 75% DE LAS VISTAS</h1>
+                        <h3>PROVIENEN DE RECOMENDACIONES GENERADAS
+                            POR SU <span>ALGORITMO</span></h3>
+                    </div>
+                    <div class="lineaRoja"></div>
+                </div>
             <div class="textos">
                 <p>El algoritmo se basa en un sistema de aprendizaje automático (machine learning) que analiza los
                     <span>datos de visualización, búsqueda, clics y calificaciones</span>

@@ -152,15 +152,16 @@ function voteMovie(isPositive) {
 document.getElementById('addBtn').addEventListener('click', () => voteMovie(true));
 document.getElementById('subtractBtn').addEventListener('click', () => voteMovie(false));
 
-// Inicializar la primera película
+
 showMovie();
-// Inicializar valores al cargar
+
 updateValues();
 
 window.addEventListener('resize', () => {
-    massPopChart.resize(); // Forzar el redimensionamiento del gráfico al cambiar el tamaño de la ventana
+    massPopChart.resize();
 });
 
 function inicializarGrafico() {
-    massPopChart.resize(); // Forzar el redimensionamiento del gráfico al cambiar el tamaño de la ventana
+    massPopChart.resize();
+    console.log("Gráfico inicializado correctamente");
 }
