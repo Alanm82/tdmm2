@@ -126,9 +126,17 @@ function ocultarPantalla() {
     const pantalla = document.getElementById(id);
     pantalla.classList.remove('noAparece'); // Muestra las pantallas seleccionadas
   });
+
+  resetearPantalla5();
   window.scrollTo(0, 0);
 }
 
+
+function resetearPantalla5() {
+  // Restablece el gráfico a su estado inicial
+  window.reiniciarGrafico();
+  inicializarGrafico()
+}
 
 
 // F I L T R A C I O N   C O D E

@@ -367,7 +367,7 @@ h4 {
 /* R E C O P  D E  D A T O S*/
 .recopDatos {
     background-color: #121212;
-    height: 1280px;
+    height: 100vh;
 
 }
 
@@ -384,7 +384,22 @@ h4 {
     font-family: "fuente1";
     color: #D81F26;
     font-size: 60px;
-    padding-top: 150px;
+    padding-top: 100px;
+}
+
+.contFinal {
+    color: var(--blanco);
+    text-align: left;
+    width: fit-content;
+}
+
+.contFinal h1 {
+    font-size: 50px;
+}
+
+.contFinal h2 {
+    text-align: left;
+    font-size: 30px;
 }
 
 .txt {
@@ -459,7 +474,9 @@ h4 {
 .dos {
 
     display: flex;
-    padding: 100px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 50px;
 
 }
 
@@ -467,7 +484,16 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: start;
     margin-left: 300px;
+}
+
+.der img {
+    height: 53%;
+}
+
+.der h1 {
+    padding-right: 80px;
 }
 
 .der h2 {
@@ -480,9 +506,6 @@ h4 {
     font-family: fuente1;
     font-size: 30px;
     color: white;
-    margin-left: 50px;
-    margin-top: 40px;
-    margin-bottom: 20px;
 }
 
 .nombrePeli {
@@ -546,8 +569,11 @@ h4 {
 
 .bar-values {
     color: white;
-    margin-left: 195px;
+    margin-left: 8%;
+    margin-right: 8%;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 90px;
     font-family: fuente5;
     font-size: 10px;
