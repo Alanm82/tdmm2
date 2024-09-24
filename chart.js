@@ -77,12 +77,16 @@ function updateValues() {
 // Llama a updateChart para renderizar el gráfico inicialmente
 updateChart();
 let movies = [
-    { title: 'Hereditary (2018)', genre: 'Terror' },
+    { title: 'El lobo de Wall Street (2013)', genre: 'Drama' },
     { title: 'Vuelo Nocturno (2010)', genre: 'Terror' },
-    { title: 'Película 2', genre: 'Comedia' },
-    { title: 'Película 3', genre: 'Romance' },
-    { title: 'Película 4', genre: 'Acción' },
-    { title: 'Película 5', genre: 'Drama' }
+    { title: 'Una Esposa de Mentira (2011)', genre: 'Comedia' },
+    { title: 'Titanic (1997)', genre: 'Romance' },
+    { title: 'Barbie (2023)', genre: 'Drama' },
+    { title: 'Hubie Halloween (2020)', genre: 'Terror' },
+    { title: 'La La Land (2016)', genre: 'Romance' },
+    { title: 'Damsel (2024)', genre: 'Acción' },
+    { title: 'Los Angeles de Charlie (2000)', genre: 'Acción' },
+    { title: 'La mascara (1994)', genre: 'Comedia' }
 ];
 
 let currentMovieIndex = 0;
@@ -132,6 +136,10 @@ function voteMovie(isPositive) {
             currentMovie.title = '¡Finalizado!';
             addBtn.disabled = true;
             subtractBtn.disabled = true;
+            var pantalla5 = document.getElementById("pantalla5");
+            var pantallaResultado = document.getElementById("pantallaResultado");
+            pantalla5.classList.add("oculto");
+            pantallaResultado.classList.remove("oculto");
         }
 
         // Mostramos la nueva película

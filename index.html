@@ -103,15 +103,15 @@
             </div>
             <div class="flex">
                 <div class="recop">
-                    <img class="nucleos" src="./img/recopilacion.png" alt="Recopilación">
+                    <img class="zoom-img" class="nucleos" src="./img/recopilacion.png" alt="Recopilación" onclick="mostrarPantalla('pantalla5')">
                     <h2>Recopilación de Datos</h2>
                 </div>
                 <div class="algoritmo">
-                    <img class="nucleos" src="./img/cerebro.png" alt="Algoritmo">
+                    <img class="zoom-img" class="nucleos" src="./img/cerebro.png" alt="Algoritmo">
                     <h2>Funcionamiento del Algoritmo</h2>
                 </div>
                 <div class="personalizacion">
-                    <img class="nucleos" src="./img/personalizacion.png" alt="Personalización">
+                    <img class="zoom-img" class="nucleos" src="./img/personalizacion.png" alt="Personalización" onclick="mostrarPantalla('pantalla7')">
                     <h2>Personalización de portadas</h2>
                 </div>
             </div>
@@ -121,7 +121,7 @@
 
     <!-- R E C O P  D E  D A T O S -->
 
-    <section id="pantalla5" class="oculto" >
+    <section class="noAparece" id="pantalla5" class="recopDatos">
         <div class="dos">
             <div class="izq">
                 <div class="lineaRoja2"></div>
@@ -142,11 +142,11 @@
 
                 <div class="container text-center mt-5">
                     <div class="bar-values">
-                        <h1><span id="dramaValue">20</span>%</h1>
-                        <h1><span id="comediaValue">20</span>%</h1>
-                        <h1><span id="terrorValue">20</span>%</h1>
-                        <h1><span id="romanceValue">20</span>%</h1>
-                        <h1><span id="accionValue">20</span>%</h1>
+                        <h1><span class="caca" id="dramaValue">20</span>%</h1>
+                        <h1><span class="caca" id="comediaValue">20</span>%</h1>
+                        <h1><span class="caca" id="terrorValue">20</span>%</h1>
+                        <h1><span class="caca" id="romanceValue">20</span>%</h1>
+                        <h1><span class="caca" id="accionValue">20</span>%</h1>
                     </div>
 
                     <canvas id="myChart" class="mt-4"></canvas>
@@ -162,22 +162,27 @@
                 <div class="nombrePeli">
                     <h1 id="movieTitle"></h1>
                 </div>
-                <img class="oculto" class="like-dislike" src="./img/eleccion.png" alt="Like y dislike">
+                
                 <div class="botoncillos">
 
-                    <button id="addBtn" class="btn btn-success"></button>
+                    <button id="addBtn" onclick="destello()" class="btn btn-success"></button>
                     <button id="subtractBtn" class="btn btn-danger"></button>
                 </div>
+
+
                 <div class="txt4">
                     <h2>Te mostramos cómo tus preferencias influyen en las recomendaciones futuras</h2>
                 </div>
             </div>
         </div>
     </section>
+    <section class="oculto" id="pantallaResultado"   class="pantallaResultado">
+
+    </section>
     <!-- F I N  D E  R E C O P  D E  D A T O S -->
 
     <!-- Inicio ArtWork-->
-    <section id="pantalla7" class="oculto">
+    <section id="pantalla7" class="noAparece">
         <div class="artWork-Content">
             <h1>Personalización de imágenes de portada</h1>
             <h3>
@@ -227,10 +232,103 @@
             </p>
 
         </div>
+        </section>
         <!-- Fin ArtWork-->
 
+        <!-- INICIO  F U N C I O N A M I E N T O  A L G O R I T M O-->
+    <section id="pantalla6" class="noAparece" class="funAlgoritmo">
+        <div class="cont-Algoritmo">
+            <div class="encabezado">
+                <div class="texto">
+                    <h1>EL 75% DE LAS VISTAS</h1>
+                    <h3>PROVIENEN DE RECOMENDACIONES GENERADAS
+                        POR SU <span>ALGORITMO</span></h3>
+                </div>
+                <div class="lineaRoja"></div>
+            </div>
+            <div class="textos">
+                <p>El algoritmo se basa en un sistema de aprendizaje automático (machine learning) que analiza los
+                    <span>datos de visualización, búsqueda, clics y calificaciones</span>
+                    de los usuarios para determinar sus preferencias y ofrecerles contenido que les pueda interesar.
+                    Se utilizan una variedad de técnicas de IA para procesar la información y crear un perfil de cada
+                    usuario.
+                </p>
+                <p>
+                    Una de las técnicas más utilizadas por Netflix es la <span>filtración colaborativa entre
+                        usuarios</span>, que te
+                    recomienda contenido al <span>comparar tus elecciones con las de otros usuariosc</span>. Si personas
+                    con gustos
+                    similares disfrutan de algo que no has visto, Netflix te lo sugiere basándose en esas coincidencias
+                </p>
+            </div>
+
+        </div>
+
+        <div class="contGrafico">
+            <div id="perfil1" class="perfil seleccionado">
+                <h2>Perfil 1</h2>
+                <img class="imgPerfil" src="./img/perfiles/perfil1/perfil1.png" alt="perfil Image">
+                <div class="actividad">
+                    <h3>Actividad</h3>
+                    <img src="./img/perfiles/perfil1/act (1).png" alt="Act1">
+                    <img src="./img/perfiles/perfil1/act (2).png" alt="Act2">
+                    <img src="./img/perfiles/perfil1/act (3).png" alt="Act3">
+                </div>
+            </div>
+
+
+            <div id="perfil2" class="perfil deseleccionado">
+                <h2>Perfil 2</h2>
+                <img class="imgPerfil" src="./img/perfiles/perfil2/perfil2.png" alt="perfil Image">
+                <div class="actividad">
+                    <h3>Actividad</h3>
+                    <img src="./img/perfiles/perfil2/act (1).png" alt="Act1">
+                    <img src="./img/perfiles/perfil2/act (2).png" alt="Act2">
+                    <img src="./img/perfiles/perfil2/act (3).png" alt="Act3">
+                </div>
+            </div>
+
+            <div id="perfil3"  class="perfil deseleccionado">
+                <h2>Perfil 3</h2>
+                <img class="imgPerfil" src="./img/perfiles/perfil3/perfil3.png" alt="perfil Image">
+                <div class="actividad">
+                    <h3>Actividad</h3>
+                    <img src="./img/perfiles/perfil3/act (1).png" alt="Act1">
+                    <img src="./img/perfiles/perfil3/act (2).png" alt="Act2">
+                    <img src="./img/perfiles/perfil3/act (3).png" alt="Act3">
+                </div>
+            </div>
+
+            <div id="tuPerfil" >
+                <h2>Tu perfil</h2>
+                <img class="imgPerfil" src="./img/perfiles/tuPerfil/tuPerfil.png" alt="perfil Image">
+                <div class="actividad">
+                    <h3>Actividad</h3>
+                    <img src="./img/perfiles/tuPerfil/act (1).png" alt="Act1">
+                    <img src="./img/perfiles/tuPerfil/act (2).png" alt="Act2">
+                    <img src="./img/perfiles/tuPerfil/act (3).png" alt="Act3">
+                </div>
+            </div>
+
+            <div class="resultado">
+                <div class="users">
+                    <img id="perfilComparar" class="imgPerfil" alt="Perfil a comparar">
+                    <img class="imgPerfil" src="./img/perfiles/tuPerfil/tuPerfil.png" alt="tu Perfil a comparar">
+                </div>
+                <div class="lineaRoja"></div>
+                <h3 id="perfilesSimilitud">
+                </h3>
+                <img id="imgResultado" src="" alt="img=">
+                <h3 id="conclusion">
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIN F U N C I O N A M I E N T O  A L G O R I T M O-->
         <script src="script.js"></script>
         <script src="chart.js"> </script>
+
 </body>
 
 </html>

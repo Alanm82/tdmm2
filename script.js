@@ -1,6 +1,6 @@
 function cambiarPantalla() {
-    const pantallas = ["pantalla1", "pantalla2", "pantalla3", "pantalla4", "pantalla5", "pantalla7"];
-    const clases = ["oculto", "pantalla2", "pantalla3", "eleccionNucleo", "recopDatos", "artWork"];
+    const pantallas = ["pantalla1", "pantalla2", "pantalla3", "pantalla4"];
+    const clases = ["oculto", "pantalla2", "pantalla3", "eleccionNucleo"];
 
     for (let i = 0; i < pantallas.length; i++) {
         let pantalla = document.getElementById(pantallas[i]);
@@ -64,3 +64,106 @@ function changeImages(option) {
 }
 
 // A R T W O R K  C O D E  F I N
+
+function destello() {
+    const div = document.getElementById('miDiv');
+    div.classList.add('destello');
+  
+    // Remover la clase después de 1 segundo para poder aplicar el destello nuevamente
+    setTimeout(() => {
+      div.classList.remove('destello');
+    }, 1000);
+  }
+  
+  function mostrarPantalla(idPantalla) {
+    // Oculta todas las pantallas (añade la clase 'pantalla')
+    const pantallas = document.querySelectorAll('');
+    pantallas.forEach(pantalla => pantalla.classList.add('noAparece'));
+
+    // Muestra la pantalla seleccionada (quita la clase 'pantalla')
+    const pantallaSeleccionada = document.getElementById(idPantalla);
+    pantallaSeleccionada.classList.remove('noAparece');
+}
+
+// F I L T R A C I O N   C O D E
+
+// Selecciona todos los elementos con la clase 'perfil'
+const perfiles = document.querySelectorAll('.perfil');
+
+const perfilInfo = {
+    perfil1: {
+      imgSrc: './img/perfiles/perfil1/perfil1.png',
+      conclusion: 'CONTINUAR BUSCANDO USUARIOS CON GUSTOS MAS PARECIDOS',
+      similitud: 'PERFILES NO  SIMILARES',
+      imgResultado: './img/perfiles/x.png',
+    },
+    perfil2: {
+      imgSrc: './img/perfiles/perfil2/perfil2.png',
+      conclusion: 'CONTINUAR BUSCANDO USUARIOS CON GUSTOS MAS PARECIDOS',
+      similitud: 'PERFILES NO  SIMILARES',
+      imgResultado: './img/perfiles/x.png',
+    },
+    perfil3: {
+      imgSrc: './img/perfiles/perfil3/perfil3.png',
+      conclusion: 'TE RECOMENDAMOS CONTENIDO QUE EL OTRO USUARIO YA VIO',
+      similitud: 'PERFILES SIMILARES!',
+      imgResultado: './img/perfiles/=.png',
+    }
+  };
+
+  const imgComparar = document.getElementById('perfilComparar');
+  const h3Similitud = document.getElementById('perfilesSimilitud');
+  const h3Conclusion = document.getElementById('conclusion');
+  const imgResultado = document.getElementById('imgResultado');
+
+
+// Función para seleccionar y deseleccionar perfiles
+function seleccionarPerfil(perfilSeleccionado) {
+    perfiles.forEach(perfil => {
+      if (perfil === perfilSeleccionado) {
+        perfil.classList.remove('deseleccionado');
+        perfil.classList.add('seleccionado');
+      } else {
+        perfil.classList.remove('seleccionado');
+        perfil.classList.add('deseleccionado');
+      }
+    });
+  
+    // Obtener el ID del perfil seleccionado
+    const perfilSeleccionadoId = perfilSeleccionado.id;
+  
+    // Actualizar la imagen y el contenido basado en el perfil seleccionado
+    actualizarResultado(perfilSeleccionadoId);
+  
+    return perfilSeleccionadoId;
+  }
+  
+  // Función para actualizar la imagen, similitud y conclusión según el perfil
+  function actualizarResultado(perfilId) {
+    const perfil = perfilInfo[perfilId];
+  
+    // Cambiar la imagen de comparación
+    imgComparar.src = perfil.imgSrc;
+  
+    // Cambiar el texto de similitud
+    h3Similitud.textContent = perfil.similitud;
+  
+    // Cambiar la conclusión
+    h3Conclusion.textContent = perfil.conclusion;
+
+    imgResultado.src = perfil.imgResultado;
+  }
+  
+  // Agregar el evento de click a cada perfil
+  perfiles.forEach(perfil => {
+    perfil.addEventListener('click', function() {
+      seleccionarPerfil(perfil);
+    });
+  });
+  
+  // Seleccionar el perfil por defecto (perfil1)
+  seleccionarPerfil(document.getElementById('perfil1'));
+
+
+
+// F I L T R A C I O N    C O D E   F I N
