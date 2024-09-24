@@ -46,7 +46,8 @@ body {
 }
 
 .inicio {
-    background-image: url(/img/fondo.png); /* Cambia la ruta a tu imagen */
+    background-image: url(/img/fondo.png);
+    /* Cambia la ruta a tu imagen */
     height: 100vh;
     /* Asegúrate de que ocupe el 100% de la ventana */
     background-color: #0E090A;
@@ -67,7 +68,7 @@ body {
 
 }
 
-.titulo2 h1{
+.titulo2 h1 {
     color: #F9F7F4;
 }
 
@@ -139,9 +140,11 @@ body {
 .pantalla2 .titulo2 h2 {
     color: var(--blanco);
 }
-.titulo2 h2{
+
+.titulo2 h2 {
     font-size: 70px;
 }
+
 .pantalla2 .lineaRoja {
     margin-top: 4%;
 }
@@ -277,11 +280,13 @@ h4 {
     align-items: start;
     width: 45%;
 }
-.texto h4{
+
+.texto h4 {
     font-family: fuente3;
     font-size: 28px;
 }
-.texto p{
+
+.texto p {
     font-family: fuente5;
 }
 
@@ -313,11 +318,12 @@ h4 {
 }
 
 .flex {
-    
+
     display: flex;
     gap: 80px;
 }
-.flex h2{
+
+.flex h2 {
     font-family: "fuente5";
 }
 
@@ -344,12 +350,15 @@ h4 {
     font-size: 30px;
     text-align: center;
 }
+
 .zoom-img {
     width: 260px;
     transition: transform 0.3s ease;
 }
+
 .zoom-img:hover {
-    transform: scale(1.1); /* Aumenta la imagen un 20% */
+    transform: scale(1.1);
+    /* Aumenta la imagen un 20% */
     cursor: pointer;
 }
 
@@ -396,7 +405,7 @@ h4 {
     margin-bottom: -50px;
 }
 
-.txt2 h1{
+.txt2 h1 {
     color: #EAE8E8;
     font-family: fuente2;
     font-size: 28px;
@@ -448,10 +457,10 @@ h4 {
 }
 
 .dos {
-  
+
     display: flex;
     padding: 100px;
-   
+
 }
 
 .der {
@@ -460,7 +469,8 @@ h4 {
     align-items: center;
     margin-left: 300px;
 }
-.der h2{
+
+.der h2 {
     font-family: "fuente5";
     font-size: 20px;
     text-align: center;
@@ -496,18 +506,22 @@ h4 {
     text-align: center;
     margin-top: 50px;
 }
-.txt4 h2{
+
+.txt4 h2 {
     font-size: 25px;
 }
-.NETFLIX h1{
+
+.NETFLIX h1 {
     font-size: 90px;
     margin-bottom: 50px;
 }
-.botoncillos{
+
+.botoncillos {
     margin-bottom: -30px;
     margin-left: -30px;
 }
-.btn-success{
+
+.btn-success {
     border-color: #1A1A1A;
     background-color: #1A1A1A;
     background-image: url(/img/like.png);
@@ -517,7 +531,8 @@ h4 {
     padding: 70px;
     border-radius: 100px;
 }
-.btn-danger{
+
+.btn-danger {
     margin-left: 40px;
     border-color: #1A1A1A;
     background-color: #1A1A1A;
@@ -528,7 +543,8 @@ h4 {
     padding: 70px;
     border-radius: 100px;
 }
-.bar-values{
+
+.bar-values {
     color: white;
     margin-left: 195px;
     display: flex;
@@ -536,22 +552,27 @@ h4 {
     font-family: fuente5;
     font-size: 10px;
 }
-.bar-values h1{
+
+.bar-values h1 {
     font-size: 20px;
     margin-top: 200px;
     margin-bottom: -200px;
     color: white;
 }
-.caca{
+
+.caca {
     color: white;
 }
-.text-Align{
+
+.text-Align {
     text-align: center;
 }
-.pantallaResultado{
+
+.pantallaResultado {
     height: 1080px;
     background-color: green;
 }
+
 /* F I N  D E  R E C O P  D E  D A T O S */
 
 /* I N I C I O  ARTWORK*/
@@ -565,7 +586,7 @@ h4 {
     color: aliceblue;
 }
 
-.artWork-Content{
+.artWork-Content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -592,7 +613,7 @@ h4 {
     color: var(--blanco);
 }
 
-span{
+span {
     color: var(--rojo-1);
 }
 
@@ -609,7 +630,7 @@ span{
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.display4Images.pop-effect{
+.display4Images.pop-effect {
     transform: scale(1.05);
     opacity: 0.7;
 }
@@ -670,7 +691,7 @@ span{
 .option img {
     display: block;
     width: 100%;
-    height:100%;
+    height: 100%;
     border-radius: 5px;
     transition: transform 0.3s ease, border 0.3s ease;
 }
@@ -683,110 +704,144 @@ span{
 
 /* F I N  ARTWORK*/
 
-
-
-/* I N I C I O  D E  F U N  A L G O R I T M O */
-.funAlgoritmo{
-    background-color: var(--blanco);
-}
-
+/* B U T T O N  C O N F I G*/
 
 .buttonRedondo {
-    position: absolute; 
-    top: 20px; 
-    right: 40px; 
-    z-index: 10; 
+    position: absolute;
+    top: 20px;
+    z-index: 10;
     width: 4%;
     height: auto;
 }
 
+.recopDatos .buttonRedondo {
+    left: 100px;
+}
+
+.artWork .buttonRedondo {
+    left: 100px;
+}
+
+.funAlgoritmo .buttonRedondo {
+    right: 100px;
+}
+
 #btnCerrar {
-    background: red; /* Fondo rojo */
-    border: none; /* Sin borde */
-    color: white; /* Color de la "X" en blanco */
-    font-size: 50px; /* Tamaño de la fuente (ajusta según sea necesario) */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    padding: 10px; /* Relleno para aumentar el área clickeable */
-    margin: 0; /* Sin márgenes */
-    border-radius: 0; /* Sin bordes redondeados, cuadrado */
-    width: 100%; /* Ancho del botón (ajusta según sea necesario) */
-    height: 100%; /* Altura del botón (ajusta según sea necesario) */
+    background: red;
+    /* Fondo rojo */
+    border: none;
+    /* Sin borde */
+    color: transparent;
+    /* Hacemos el color del texto transparente */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    padding: 10px;
+    /* Relleno para aumentar el área clickeable */
+    margin: 0;
+    /* Sin márgenes */
+    border-radius: 0;
+    /* Sin bordes redondeados, cuadrado */
+    width: 100%;
+    /* Ancho del botón (ajusta según sea necesario) */
+    height: 100%;
+    /* Altura del botón (ajusta según sea necesario) */
 }
 
 #btnCerrar:hover {
-    background: darkred; /* Cambia a un rojo más oscuro al pasar el ratón */
+    background: darkred;
+    /* Cambia a un rojo más oscuro al pasar el ratón */
+}
+
+#arrowImage {
+    width: 100%;
+    /* Ajusta el tamaño de la imagen al 100% del botón */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
 }
 
 
+/* F I N  B U T T O N  C O N F I G*/
 
 
-.cont-Algoritmo{
+
+/* I N I C I O  D E  F U N  A L G O R I T M O */
+.funAlgoritmo {
+    background-color: var(--blanco);
+}
+
+.cont-Algoritmo {
     display: flex;
     flex-direction: column;
     padding: 100px;
     align-items: start;
     gap: 60px;
 }
-.encabezado{
+
+.encabezado {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: start;
     justify-content: start;
 }
-.encabezado .lineaRoja{
+
+.encabezado .lineaRoja {
     margin-top: 0px;
 }
-.encabezado .texto{
+
+.encabezado .texto {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
     width: 100%;
-    margin: 0px ;
+    margin: 0px;
 }
-.texto h1{
+
+.texto h1 {
     white-space: nowrap;
     font-size: 80px;
     color: var(--rojo-1);
 }
-.texto h3{
+
+.texto h3 {
     font-size: 40px;
-    
+
 }
 
-.textos p{
+.textos p {
     font-size: 40px;
 }
 
-.contGrafico{
-display: flex;
-flex-direction: row;
-padding: 0px 100px;
-justify-content: space-between;
-align-items: center;
-padding-bottom: 6%;
+.contGrafico {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6%;
 }
 
-.contGrafico h2, h3{
+.contGrafico h2,
+h3 {
     font-size: 36px;
     margin: 0px;
 }
 
-.perfil{
+.perfil {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-#tuPerfil{
+#tuPerfil {
     display: flex;
     flex-direction: column;
     margin-bottom: 24px;
     gap: 24px;
 }
 
-.actividad{
+.actividad {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -796,45 +851,45 @@ padding-bottom: 6%;
 
 .seleccionado {
     opacity: 1;
-    background-color: #3498db; 
+    background-color: #3498db;
     padding: 24px;
     border-radius: 15px;
-  }
-  
-  .deseleccionado {
+}
+
+.deseleccionado {
     opacity: 0.2;
     padding: 9px;
     background-color: transparent;
-    border: 15px solid #3498db; 
+    border: 15px solid #3498db;
     border-radius: 15px;
-  }
+}
 
-  /* Colores personalizados por perfil */
+/* Colores personalizados por perfil */
 #perfil1.seleccionado {
     background-color: #6DD3FF;
-  }
-  
-  #perfil1.deseleccionado {
-    border: 15px solid #6DD3FF;
-  }
-  
-  #perfil2.seleccionado {
-    background-color: #5DFA6F;
-  }
-  
-  #perfil2.deseleccionado {
-    border: 15px solid #5DFA6F;
-  }
-  
-  #perfil3.seleccionado {
-    background-color:  #8571F9;
-  }
-  
-  #perfil3.deseleccionado {
-    border: 15px solid #8571F9;
-  }
+}
 
-  .resultado{
+#perfil1.deseleccionado {
+    border: 15px solid #6DD3FF;
+}
+
+#perfil2.seleccionado {
+    background-color: #5DFA6F;
+}
+
+#perfil2.deseleccionado {
+    border: 15px solid #5DFA6F;
+}
+
+#perfil3.seleccionado {
+    background-color: #8571F9;
+}
+
+#perfil3.deseleccionado {
+    border: 15px solid #8571F9;
+}
+
+.resultado {
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -842,19 +897,19 @@ padding-bottom: 6%;
     align-items: center;
     justify-content: center;
     text-align: center;
-  }
+}
 
 
-  .users{
+.users {
     display: flex;
     flex-direction: row;
     width: auto;
     gap: 24px;
-  }
+}
 
 /* F I N  D E  F U N  A L G O R I T M O */
 
-.noAparece{
+.noAparece {
     display: none;
     visibility: hidden;
 }

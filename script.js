@@ -104,6 +104,7 @@ function mostrarPantalla(idPantalla) {
     default:
       break; // No hace nada si el id no coincide
   }
+  window.scrollTo(0, 0);
 }
 
 
@@ -125,6 +126,7 @@ function ocultarPantalla() {
     const pantalla = document.getElementById(id);
     pantalla.classList.remove('noAparece'); // Muestra las pantallas seleccionadas
   });
+  window.scrollTo(0, 0);
 }
 
 
